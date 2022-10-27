@@ -1,6 +1,6 @@
 class Usuario {
     private perfilId: number;
-    private nombre: string
+    private nombre: string;
     private saldo: number;
 
     constructor(pId: number, pNombre: string, pSaldo: number) {
