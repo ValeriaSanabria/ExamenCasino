@@ -1,7 +1,5 @@
 let readlineSync = require('readline-sync');
 
-
-
 export class Banca{
     
 }
