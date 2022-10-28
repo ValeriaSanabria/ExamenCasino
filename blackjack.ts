@@ -1,4 +1,4 @@
-import { Banca } from "./Banca"
+
 import { readlineSync } from "./main";
 
 
