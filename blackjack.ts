@@ -1,8 +1,7 @@
+import { Banca } from "./Banca"
+
 let readlineSync = require('readline-sync');
 
-export class Banca{
-    
-}
 
 export class Blackjack {
     private premio: number;
@@ -22,6 +21,7 @@ export class Blackjack {
         this.premio = pPremio;
     }
     
+
     ingresarApuesta (pSaldo: number): void {
         this.premio = this.premio + pSaldo;
     }
@@ -54,12 +54,17 @@ export class Blackjack {
                 } else if (juego === 21){
                     console.log ("Felicidades BlackJack");
                     break
+
                 } 
+
+                }
+
             }  
-            respuesta = readlineSync.question("Desea pedir otra carta? ");
-        }        
+        respuesta = readlineSync.question("Desea pedir otra carta? ");
     }
-}
+}        
+
+
 
 let blackjack1: Blackjack = new Blackjack (500000);
 console.log(blackjack1.pedirCartaAleatoria());
