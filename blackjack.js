@@ -1,18 +1,12 @@
 "use strict";
 exports.__esModule = true;
-exports.Blackjack = exports.Banca = void 0;
-var readlineSync = require('readline-sync');
-var Banca = /** @class */ (function () {
-    function Banca() {
-    }
-    return Banca;
-}());
-exports.Banca = Banca;
+exports.Blackjack = void 0;
+var main_1 = require("./main");
 var Blackjack = /** @class */ (function () {
     function Blackjack(pPremio) {
         this.premio = pPremio;
-        this.palo = "diamantes";
-        this.numeroCarta = 1;
+        this.totalSumaUsuario = 0;
+        this.totalSumaBanca = 0;
     }
     Blackjack.prototype.getPremio = function () {
         return this.premio;
@@ -33,33 +27,47 @@ var Blackjack = /** @class */ (function () {
     };
     Blackjack.prototype.iniciarJuego = function () {
         console.log("Bienvenido a BlackJack");
-        var juego = 0;
-        juego += this.pedirCartaAleatoria();
-        console.log("Total: ", juego);
-        var respuesta = readlineSync.question("Desea pedir otra carta? ");
+        this.totalSumaUsuario += this.pedirCartaAleatoria();
+        console.log("Total: ", this.totalSumaUsuario);
+        var respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
         while (respuesta === "si" || respuesta === "no") {
             if (respuesta === "no") {
-                console.log("Usted se planta con: ", juego);
+                console.log("Usted se planta con: ", this.totalSumaUsuario);
                 break;
             }
             else if (respuesta === "si") {
-                juego += this.pedirCartaAleatoria();
-                console.log("total: ", juego);
-                if (juego > 21) {
+                this.totalSumaUsuario += this.pedirCartaAleatoria();
+                console.log("total: ", this.totalSumaUsuario);
+                if (this.totalSumaUsuario > 21) {
                     console.log("Superaste los 21, has perdido.");
                     break;
                 }
-                else if (juego === 21) {
+                else if (this.totalSumaUsuario === 21) {
                     console.log("Felicidades BlackJack");
                     break;
                 }
             }
-            respuesta = readlineSync.question("Desea pedir otra carta? ");
+            respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
+        }
+        if (this.totalSumaUsuario === 21 || this.totalSumaUsuario > 21) {
+            console.log("Fin del juego");
+        }
+        else if (this.totalSumaUsuario < 21) {
+            console.log("Ahora juega la banca");
+            this.totalSumaBanca += this.pedirCartaAleatoria();
+            console.log("Total de la banca: ", this.totalSumaBanca);
+            while ((this.totalSumaBanca < this.totalSumaUsuario) && (this.totalSumaBanca < 21)) {
+                this.totalSumaBanca += this.pedirCartaAleatoria();
+                console.log("Total de la banca: ", this.totalSumaBanca);
+            }
+            if ((this.totalSumaBanca > this.totalSumaUsuario) && (this.totalSumaBanca <= 21)) {
+                console.log("La banca gana");
+            }
+            else {
+                console.log("Ganaste");
+            }
         }
     };
     return Blackjack;
 }());
 exports.Blackjack = Blackjack;
-var blackjack1 = new Blackjack(500000);
-console.log(blackjack1.pedirCartaAleatoria());
-blackjack1.iniciarJuego();
