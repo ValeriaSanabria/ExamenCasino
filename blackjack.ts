@@ -1,7 +1,6 @@
 import { Banca } from "./Banca"
 import { readlineSync } from "./main";
 
-
 export class Blackjack {
     private premio: number;
     private totalSumaUsuario: number;
