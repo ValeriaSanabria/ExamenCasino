@@ -1,11 +1,7 @@
 import { Banca } from "./Banca"
-<<<<<<< HEAD
 
 let readlineSync = require('readline-sync');
 
-=======
-import { readlineSync } from "./main";
->>>>>>> c218a3783da5f2dedbab95969827d361849baefd
 
 export class Blackjack {
     private premio: number;
