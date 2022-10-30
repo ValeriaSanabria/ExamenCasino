@@ -1,4 +1,4 @@
-class Tragamonedas{
+export class Tragamonedas{
     private premio: number;
     private saldo: number;
     // private ruedas: Ruedas[];
