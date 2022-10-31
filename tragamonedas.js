@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.Tragamonedas = void 0;
 var Tragamonedas = /** @class */ (function () {
     // private ruedas: Ruedas[];
     function Tragamonedas(psaldo) {
@@ -31,4 +34,5 @@ var Tragamonedas = /** @class */ (function () {
     };
     return Tragamonedas;
 }());
+exports.Tragamonedas = Tragamonedas;
 var nuevoJugador = new Tragamonedas(100);

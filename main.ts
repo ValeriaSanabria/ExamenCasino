@@ -6,8 +6,7 @@ export let readlineSync = require('readline-sync');
 
 let usuario1: Usuario = new Usuario (123, "Jugador", 10000);
 let blackjack1: Blackjack = new Blackjack ();
-let casino1 : Casino = new Casino (blackjack1);
-
+let casino1 : Casino = new Casino ("Las Estrellas", 100000000, blackjack1);
 
 console.log("");
      

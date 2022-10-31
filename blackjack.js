@@ -51,7 +51,7 @@ var Blackjack = /** @class */ (function () {
                         if (this.totalSumaUsuario > 21) {
                             console.log("Superaste los 21, has perdido.");
                             console.log("Fin del juego");
-                            console.log("su saldo es: ", pUsuario.getSaldo());
+                            console.log("Su saldo es: ", pUsuario.getSaldo());
                             break;
                         }
                         else if (this.totalSumaUsuario === 21) {
@@ -60,12 +60,12 @@ var Blackjack = /** @class */ (function () {
                         }
                     }
                     else {
-                        console.log("Dato invalido");
+                        console.log("Dato invalido ");
                     }
                     respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
                 }
                 if (this.totalSumaUsuario <= 21) {
-                    console.log("Ahora juega la banca");
+                    console.log("......Ahora juega la banca......");
                     carta = this.pedirCartaAleatoria();
                     console.log("Carta: ", carta);
                     console.log("Total de la banca: ", this.totalSumaBanca += carta);
@@ -74,7 +74,7 @@ var Blackjack = /** @class */ (function () {
                         console.log("Carta: ", carta);
                         console.log("Total de la banca: ", this.totalSumaBanca += carta);
                     }
-                    if ((this.totalSumaBanca === 21) && (this.totalSumaUsuario === 21)) {
+                    if (this.totalSumaBanca === this.totalSumaUsuario) {
                         console.log("Empate");
                         console.log("Su saldo es:", pUsuario.getSaldo() + pApuesta);
                         break;
@@ -96,53 +96,3 @@ var Blackjack = /** @class */ (function () {
     return Blackjack;
 }());
 exports.Blackjack = Blackjack;
-/*
-    
-            this.resetearJuego();
-            this.ingresarApuesta (pApuesta, pUsuario);
-            console.log("Bienvenido a BlackJack")
-            
-            this.totalSumaUsuario += this.pedirCartaAleatoria();
-            console.log ("Total: ", this.totalSumaUsuario);
-            respuesta = readlineSync.question("Desea pedir otra carta? ");
-            while (respuesta === "si" || respuesta === "no") {
-                if (respuesta === "no") {
-                    console.log ("Usted se planta con: ", this.totalSumaUsuario);
-                    break
-                }
-                else if (respuesta === "si") {
-                    this.totalSumaUsuario += this.pedirCartaAleatoria();
-                    console.log ("total: ", this.totalSumaUsuario);
-                    if (this.totalSumaUsuario > 21) {
-                        console.log ("Superaste los 21, has perdido.");
-                        console.log ("Fin del juego");
-                        break
-                    } else if (this.totalSumaUsuario === 21){
-                        console.log ("Felicidades BlackJack");
-                        console.log("Ganaste: $", this.getPremio(pApuesta));
-                        pUsuario.sumarSaldo (this.getPremio(pApuesta));
-                        console.log ("Fin del juego");
-                        break
-                    }
-                }else {
-                    console.log ("Dato invalido");
-                }
-                respuesta = readlineSync.question("Desea pedir otra carta? ");
-            } if (this.totalSumaUsuario < 21) {
-                console.log ("Ahora juega la banca");
-                this.totalSumaBanca += this.pedirCartaAleatoria();
-                console.log ("Total de la banca: ", this.totalSumaBanca);
-                          
-                while ((this.totalSumaBanca <= this.totalSumaUsuario) && (this.totalSumaBanca < 21)){
-                    this.totalSumaBanca += this.pedirCartaAleatoria();
-                    console.log ("Total de la banca: ", this.totalSumaBanca);
-                    if (this.totalSumaBanca > 21) {
-                        console.log("Ganaste: $", this.getPremio(pApuesta));
-                        pUsuario.sumarSaldo (this.getPremio(pApuesta));
-                    } else if ((this.totalSumaBanca > this.totalSumaUsuario) && (this.totalSumaBanca <= 21)) {
-                        console.log("La banca gana");
-                    }
-                }
-            }
-            
-*/ 

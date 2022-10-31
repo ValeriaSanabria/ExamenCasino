@@ -6,7 +6,6 @@ var Usuario = /** @class */ (function () {
         this.perfilId = pId;
         this.nombre = pNombre;
         this.saldo = pSaldo;
-        //this.profileId = Casino.profiles.size();
     }
     Usuario.prototype.setId = function (pPerfilId) {
         this.perfilId = pPerfilId;
@@ -31,17 +30,6 @@ var Usuario = /** @class */ (function () {
     };
     Usuario.prototype.hacerApuesta = function (pApuesta) {
         this.saldo = this.saldo - pApuesta;
-    };
-    Usuario.prototype.elegirJuego = function (pOpcion) {
-        if (pOpcion === 1 || pOpcion === 2 || pOpcion === 3 || pOpcion === 4) {
-        }
-    };
-    //inciarJuegoBlack (pCasino: Casino): void {
-    //    pCasino.iniciarBlack (parametro)
-    //}
-    Usuario.prototype.obtenerFichas = function () {
-    };
-    Usuario.prototype.salirDelJuego = function () {
     };
     return Usuario;
 }());

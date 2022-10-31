@@ -8,13 +8,12 @@ export class Usuario {
     private perfilId: number;
     private nombre: string;
     private saldo: number;
-    private apostar: boolean;
+    private apostar: number;
 
-    constructor(pId: number, pNombre: string, pSaldo: number, pApostar: boolean) {
+    constructor (pId: number, pNombre: string, pSaldo: number) {
     this.perfilId = pId;
     this.nombre = pNombre;
-    this.saldo = pSaldo;
-    this.apostar = pApostar;
+    this.saldo = pSaldo;    
 }
 public setId(pPerfilId: number): void {
     this.perfilId = pPerfilId;
@@ -41,29 +40,5 @@ public getSaldo(){
 
 public hacerApuesta (pApuesta: number): void {
     this.saldo = this.saldo - pApuesta;
-
-
-public hacerApuesta(): void{
-if (this.apostar == true){
-    this.apostar = false;
-} else {
-    this.apostar = true;
-  }
-}
-
-public elegirJuego (pOpcion: number): void {
-  if (pOpcion === 1 || pOpcion === 2 || pOpcion === 3 || pOpcion === 4){
-    } 
-}
-//inciarJuegoBlack (pCasino: Casino): void {
-//    pCasino.iniciarBlack (parametro)
-//}
-
-public obtenerFichas(){
-
-}
-
-public salirDelJuego(){
-    
 }
 }
