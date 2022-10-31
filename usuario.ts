@@ -1,41 +1,44 @@
-class Usuario {
+import { Blackjack } from "./blackjack";
+import { Casino } from "./casino";
+import { readlineSync } from "./main";
+import { Ruleta } from "./ruleta";
+
+export class Usuario {
+
     private perfilId: number;
     private nombre: string;
     private saldo: number;
+    private apostar: number;
 
-    constructor(pId: number, pNombre: string, pSaldo: number) {
+    constructor (pId: number, pNombre: string, pSaldo: number) {
     this.perfilId = pId;
     this.nombre = pNombre;
-    this.saldo = pSaldo;
-    //this.profileId = Casino.profiles.size();
+    this.saldo = pSaldo;    
 }
-
-
-public getId(){
+public setId(pPerfilId: number): void {
+    this.perfilId = pPerfilId;
+}
+public getPerfilId (): number{
     return this.perfilId;
 }
-
+public setNombre (pNombre: string): void {
+    this.nombre = pNombre;
+}
 public getNombre(){
     return this.nombre;
 }
-
+public sumarSaldo (pApuesta: number): number {
+   return this.saldo += pApuesta * 2; 
+   
+}
+public restarSaldo (pApuesta: number): void {
+    this.saldo = this.saldo - pApuesta;
+}
 public getSaldo(){
     return this.saldo;
 }
 
-public hacerApuesta(){
-
-}
-
-public elegirJuego(){
-
-}
-
-public obtenerFichas(){
-
-}
-
-public salirDelJuego(){
-    
+public hacerApuesta (pApuesta: number): void {
+    this.saldo = this.saldo - pApuesta;
 }
 }
