@@ -1,3 +1,5 @@
+import {Tragamonedas} from "./abstractTragamonedas"
+
 class Casino{
 
 
