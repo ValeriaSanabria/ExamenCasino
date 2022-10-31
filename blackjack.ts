@@ -2,6 +2,9 @@
 import { readlineSync } from "./main";
 import { Usuario } from "./usuario";
 
+
+let readlineSync = require('readline-sync');
+
 export class Blackjack {    
     private totalSumaUsuario: number;
     private totalSumaBanca: number;
