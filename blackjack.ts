@@ -1,15 +1,20 @@
 import { readlineSync } from "./main";
 import { Usuario } from "./usuario";
+import * as fs from 'fs';
+
+
 
 export class Blackjack {
     private totalSumaUsuario: number;
     private totalSumaBanca: number;
     private carta: number;
+    private manual: string;
 
     constructor() {
         this.totalSumaUsuario = 0;
         this.totalSumaBanca = 0;
         this.carta = 0;
+        this.manual = fs.readFileSync('manualBlackjack.txt', 'utf8');
     }
     public getPremio(pApuesta: number): number {
         let premio = pApuesta * 2
@@ -40,9 +45,10 @@ export class Blackjack {
 
         while (respuesta === "si" || respuesta === "no") {
             if (respuesta === "no") {
-                console.log("Salio de BlackJack");
+                console.log ("Salio de BlackJack");
                 break;
             } else if (respuesta === "si") {
+                console.log (this.manual);
                 let pApuesta: number = readlineSync.question("Inicia su apuesta: ");
                 if (pApuesta > pUsuario.getSaldo()) {
                     console.log ("Lo siento, fondo insuficiente, adios");
