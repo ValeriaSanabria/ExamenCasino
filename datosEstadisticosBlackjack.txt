@@ -1,7 +1,7 @@
 
          Datos recolectados
-Cantidad de dinero apostado: 110
-Victorias de la Banca: 2
+Victorias de la Banca: 1
 Perdidas de la Banca: 1
 Empates: 1
-Total de dinero entregado: 60
+Total de dinero recaudado: $889
+Total de dinero entregado: $149
