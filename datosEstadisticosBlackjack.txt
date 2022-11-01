@@ -1,7 +1,7 @@
 
          Datos recolectados
-Cantidad de dinero apostado: 110
-Victorias de la Banca: 2
-Perdidas de la Banca: 1
-Empates: 1
-Total de dinero entregado: 60
+Cantidad de dinero apostado: 9093
+Victorias de la Banca: 5
+Perdidas de la Banca: 2
+Empates: 0
+Total de dinero entregado: 12080

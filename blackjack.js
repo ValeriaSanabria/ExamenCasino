@@ -68,6 +68,7 @@ var Blackjack = /** @class */ (function () {
                                 console.log("Superaste los 21, has perdido.");
                                 console.log("Fin del juego");
                                 console.log("Su saldo es: ", pUsuario.getSaldo());
+                                this.cantGanadasBancas += 1 * 1;
                                 break;
                             }
                             else if (this.totalSumaUsuario === 21) {
