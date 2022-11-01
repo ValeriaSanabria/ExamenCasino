@@ -14,6 +14,9 @@ var Casino = /** @class */ (function () {
     Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario, pApuesta) {
         pRuleta.iniciarJuegoRuleta(pUsuario, pApuesta);
     };
+    Casino.prototype.mostrarEstadisticasBlackjack = function (pBlackjack) {
+        pBlackjack.generarEstadisticas();
+    };
     return Casino;
 }());
 exports.Casino = Casino;

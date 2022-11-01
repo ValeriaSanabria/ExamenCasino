@@ -27,4 +27,8 @@ export class Casino {
     public iniciarRuleta (pRuleta: Ruleta, pUsuario: Usuario, pApuesta: number): void {
         pRuleta.iniciarJuegoRuleta (pUsuario, pApuesta);
 }
+    public mostrarEstadisticasBlackjack (pBlackjack: Blackjack): void {
+        pBlackjack.generarEstadisticas();
+
+    }
 }
