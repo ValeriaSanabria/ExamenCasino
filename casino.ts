@@ -2,7 +2,7 @@
 import { Blackjack } from "./blackjack";
 import { Usuario } from "./usuario";
 import { readlineSync } from "./main";
-import { Tragamonedas } from "./tragamonedas";
+import { Tragamonedas } from "./abstractTragamonedas";
 import { Ruleta } from "./ruleta";
 
 export class Casino { 
