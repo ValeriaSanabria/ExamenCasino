@@ -25,8 +25,9 @@ console.log("Bienvenido a: ", juegos[i]);
         
 if (juegos[i] === "Blackjack") {           
     casino1.iniciarBlack (blackjack1, usuario1);
+    blackjack1.generarEstadisticas();
 } else if (juegos[i] === "Ruleta") {
-    casino1.iniciarRuleta (ruleta1, usuario1,100);
+    casino1.iniciarRuleta (ruleta1, usuario1,100);    
 } else if (juegos[i] === "Tragamonedas simple") {
     tragamonedas4.iniciarJuego();    
 } else if (juegos[i] === "Tragamonedas full") {

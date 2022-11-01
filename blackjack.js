@@ -9,6 +9,11 @@ var Blackjack = /** @class */ (function () {
         this.totalSumaBanca = 0;
         this.carta = 0;
         this.manual = fs.readFileSync('manualBlackjack.txt', 'utf8');
+        this.cantDineroApostado = 0;
+        this.cantEmpate = 0;
+        this.cantGanadasBancas = 0;
+        this.cantPerdidasBanca = 0;
+        this.totalDineroEntregado = 0;
     }
     Blackjack.prototype.getPremio = function (pApuesta) {
         var premio = pApuesta * 2;
@@ -86,20 +91,29 @@ var Blackjack = /** @class */ (function () {
                         if (this.totalSumaBanca === this.totalSumaUsuario) {
                             console.log("Empate");
                             console.log("Su saldo es:", pUsuario.cobrarEmpate(pApuesta));
+                            this.cantEmpate += 1 * 1;
                         }
                         else if ((this.totalSumaBanca > this.totalSumaUsuario) && (this.totalSumaBanca < 22)) {
                             console.log("La banca gana");
                             console.log("Su saldo es:", pUsuario.getSaldo());
+                            this.cantGanadasBancas += 1 * 1;
                         }
                         else {
                             console.log("Ganaste: $", this.getPremio(pApuesta));
                             console.log("Su saldo es: ", pUsuario.sumarSaldo(pApuesta));
+                            this.cantPerdidasBanca += 1 * 1;
+                            this.totalDineroEntregado += this.getPremio(pApuesta);
                         }
                     }
                     respuesta = main_1.readlineSync.question("Desea jugar de nuevo? ");
+                    this.cantDineroApostado += pApuesta * 1;
                 }
             }
         }
+    };
+    Blackjack.prototype.generarEstadisticas = function () {
+        fs.writeFileSync('datosEstadisticosBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de dinero apostado: " + this.cantDineroApostado + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero entregado: " + this.totalDineroEntregado + "\n");
+        console.log(fs.readFileSync('datosEstadisticosBlackjack.txt', 'utf8'));
     };
     return Blackjack;
 }());

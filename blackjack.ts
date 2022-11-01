@@ -2,19 +2,29 @@ import { readlineSync } from "./main";
 import { Usuario } from "./usuario";
 import * as fs from 'fs';
 
-
-
 export class Blackjack {
     private totalSumaUsuario: number;
     private totalSumaBanca: number;
     private carta: number;
     private manual: string;
+    private cantDineroApostado: number;
+    private cantEmpate: number;
+    private cantGanadasBancas: number;
+    private cantPerdidasBanca: number;
+    private totalDineroEntregado: number;
 
     constructor() {
         this.totalSumaUsuario = 0;
         this.totalSumaBanca = 0;
         this.carta = 0;
         this.manual = fs.readFileSync('manualBlackjack.txt', 'utf8');
+        this.cantDineroApostado = 0;
+        this.cantEmpate = 0;
+        this.cantGanadasBancas = 0;
+        this.cantPerdidasBanca = 0;
+        this.totalDineroEntregado = 0;
+        
+
     }
     public getPremio(pApuesta: number): number {
         let premio = pApuesta * 2
@@ -71,6 +81,7 @@ export class Blackjack {
                                 console.log("Superaste los 21, has perdido.");
                                 console.log("Fin del juego");
                                 console.log("Su saldo es: ", pUsuario.getSaldo())
+                                this.cantGanadasBancas += 1 * 1; 
                                 break;
                             } else if (this.totalSumaUsuario === 21) {
                                 console.log("Felicidades BlackJack");
@@ -92,18 +103,28 @@ export class Blackjack {
                         }
                         if (this.totalSumaBanca === this.totalSumaUsuario) {
                             console.log("Empate");
-                            console.log("Su saldo es:", pUsuario.cobrarEmpate(pApuesta));                        
+                            console.log("Su saldo es:", pUsuario.cobrarEmpate(pApuesta));
+                            this.cantEmpate += 1 * 1;                      
                         } else if ((this.totalSumaBanca > this.totalSumaUsuario) && (this.totalSumaBanca < 22)) {
                             console.log("La banca gana");
-                            console.log("Su saldo es:", pUsuario.getSaldo());                        
+                            console.log("Su saldo es:", pUsuario.getSaldo());
+                            this.cantGanadasBancas += 1 * 1;                         
                         } else {
                             console.log("Ganaste: $", this.getPremio(pApuesta));
                             console.log("Su saldo es: ", pUsuario.sumarSaldo(pApuesta));
+                            this.cantPerdidasBanca += 1 * 1;
+                            this.totalDineroEntregado += this.getPremio(pApuesta); 
                         }
                     }
                     respuesta = readlineSync.question("Desea jugar de nuevo? ");
+                    this.cantDineroApostado += pApuesta * 1;
                 }
             }
-        }
+        }       
+    }
+
+    public generarEstadisticas(): void {
+        fs.writeFileSync('datosEstadisticosBlackjack.txt', "\n" + "         Datos recolectados" +"\n"+ "Cantidad de dinero apostado: " + this.cantDineroApostado + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero entregado: " + this.totalDineroEntregado + "\n" );        
+        console.log(fs.readFileSync('datosEstadisticosBlackjack.txt', 'utf8'));
     }
 }
