@@ -12,7 +12,7 @@ export class Usuario {
     constructor (pId: number, pNombre: string, pSaldo: number) {
     this.perfilId = pId;
     this.nombre = pNombre;
-    this.saldo = pSaldo;    
+    this.saldo = pSaldo;
 }
 public setId(pPerfilId: number): void {
     this.perfilId = pPerfilId;
