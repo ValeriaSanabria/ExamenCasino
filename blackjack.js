@@ -2,11 +2,13 @@
 exports.__esModule = true;
 exports.Blackjack = void 0;
 var main_1 = require("./main");
+var fs = require("fs");
 var Blackjack = /** @class */ (function () {
     function Blackjack() {
         this.totalSumaUsuario = 0;
         this.totalSumaBanca = 0;
         this.carta = 0;
+        this.manual = fs.readFileSync('manualBlackjack.txt', 'utf8');
     }
     Blackjack.prototype.getPremio = function (pApuesta) {
         var premio = pApuesta * 2;
@@ -36,6 +38,7 @@ var Blackjack = /** @class */ (function () {
                 break;
             }
             else if (respuesta === "si") {
+                console.log(this.manual);
                 var pApuesta = main_1.readlineSync.question("Inicia su apuesta: ");
                 if (pApuesta > pUsuario.getSaldo()) {
                     console.log("Lo siento, fondo insuficiente, adios");

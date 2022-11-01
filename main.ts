@@ -5,7 +5,6 @@ import { Tragamonedas4 } from "./tragamonedasCuatroRuedas";
 import { Tragamonedas5 } from "./tragamonedasCincoRuedas";
 import { Ruleta } from "./ruleta";
 
-
 export let readlineSync = require('readline-sync');
 let usuario1: Usuario = new Usuario (123, "Jugador", 10000);
 let blackjack1: Blackjack = new Blackjack ();
