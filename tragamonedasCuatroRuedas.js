@@ -35,12 +35,18 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         var rueda4 = 0;
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
         var inicio = readlineSync.question("Desea Jugar Ya?...");
-        if (inicio === "si") {
-            rueda1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-            rueda2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-            rueda3 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-            rueda4 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-            console.log(rueda1, rueda2, rueda3, rueda4);
+        while (inicio === "si" || inicio === "no") {
+            if (inicio === "no") {
+                console.log("Gracias... vuelva pronto.");
+                break;
+            }
+            else if (inicio === "si") {
+                rueda1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+                rueda2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+                rueda3 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+                rueda4 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+                console.log(rueda1, rueda2, rueda3, rueda4);
+            }
             if (rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4) {
                 console.log("Gano 1000");
             }
@@ -53,9 +59,7 @@ var Tragamonedas4 = /** @class */ (function (_super) {
             else {
                 console.log("Siga Participando...");
             }
-        }
-        else {
-            console.log("Gracias por su visita...");
+            inicio = readlineSync.question("Desea jugar de nuevo? ");
         }
     };
     Tragamonedas4.prototype.entregarPremio = function (psaldoUsuario) {
@@ -63,5 +67,5 @@ var Tragamonedas4 = /** @class */ (function (_super) {
     return Tragamonedas4;
 }(abstractTragamonedas_1.Tragamonedas));
 exports.Tragamonedas4 = Tragamonedas4;
-var tragamonedas1 = new Tragamonedas4(100);
-tragamonedas1.iniciarJuego();
+// let tragamonedas1: Tragamonedas4 = new Tragamonedas4(100);
+// tragamonedas1.iniciarJuego();
