@@ -19,7 +19,7 @@ export class Casino {
     }
 
 
-    public iniciarBlack (pBlackjack: Blackjack, pApuesta: number, pUsuario: Usuario): void {
-        pBlackjack.iniciarJuegoBlackJack (pApuesta, pUsuario);
+    public iniciarBlack (pBlackjack: Blackjack, pUsuario: Usuario): void {
+        pBlackjack.iniciarJuegoBlackJack (pUsuario);
     }
 }

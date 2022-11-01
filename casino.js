@@ -7,8 +7,8 @@ var Casino = /** @class */ (function () {
         this.fondos = pFondos;
         this.blackjack = pBlackjack;
     }
-    Casino.prototype.iniciarBlack = function (pBlackjack, pApuesta, pUsuario) {
-        pBlackjack.iniciarJuegoBlackJack(pApuesta, pUsuario);
+    Casino.prototype.iniciarBlack = function (pBlackjack, pUsuario) {
+        pBlackjack.iniciarJuegoBlackJack(pUsuario);
     };
     return Casino;
 }());

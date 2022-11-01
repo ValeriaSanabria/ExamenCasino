@@ -22,14 +22,14 @@ var Usuario = /** @class */ (function () {
     Usuario.prototype.sumarSaldo = function (pApuesta) {
         return this.saldo += pApuesta * 2;
     };
+    Usuario.prototype.cobrarEmpate = function (pApuesta) {
+        return this.saldo += pApuesta * 1;
+    };
     Usuario.prototype.restarSaldo = function (pApuesta) {
         this.saldo = this.saldo - pApuesta;
     };
     Usuario.prototype.getSaldo = function () {
         return this.saldo;
-    };
-    Usuario.prototype.hacerApuesta = function (pApuesta) {
-        this.saldo = this.saldo - pApuesta;
     };
     return Usuario;
 }());

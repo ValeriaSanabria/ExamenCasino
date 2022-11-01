@@ -8,7 +8,6 @@ export class Usuario {
     private perfilId: number;
     private nombre: string;
     private saldo: number;
-    private apostar: number;
 
     constructor (pId: number, pNombre: string, pSaldo: number) {
     this.perfilId = pId;
@@ -29,7 +28,9 @@ public getNombre(){
 }
 public sumarSaldo (pApuesta: number): number {
    return this.saldo += pApuesta * 2; 
-   
+}
+public cobrarEmpate (pApuesta: number): number {
+    return this.saldo += pApuesta * 1; 
 }
 public restarSaldo (pApuesta: number): void {
     this.saldo = this.saldo - pApuesta;
@@ -38,7 +39,4 @@ public getSaldo(){
     return this.saldo;
 }
 
-public hacerApuesta (pApuesta: number): void {
-    this.saldo = this.saldo - pApuesta;
-}
 }

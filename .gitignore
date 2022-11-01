@@ -106,3 +106,7 @@ dist
 .pack-lock.json
 
 .json
+
+.package-lock.json
+
+*json

@@ -19,7 +19,7 @@ console.log("                        Bienvenido al casino");
 i = exports.readlineSync.keyInSelect(juegos, "Elija su juego");
 console.log("Bienvenido a: ", juegos[i]);
 if (juegos[i] === "Blackjack") {
-    casino1.iniciarBlack(blackjack1, 100, usuario1);
+    casino1.iniciarBlack(blackjack1, usuario1);
 }
 else if (juegos[i] === "Ruleta") {
     console.log("Aca va la ruleta");
