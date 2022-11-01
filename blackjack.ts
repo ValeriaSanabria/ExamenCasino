@@ -4,11 +4,12 @@ import { Usuario } from "./usuario";
 export class Blackjack {
     private totalSumaUsuario: number;
     private totalSumaBanca: number;
+    private carta: number;
 
     constructor() {
-
         this.totalSumaUsuario = 0;
         this.totalSumaBanca = 0;
+        this.carta = 0;
     }
     public getPremio(pApuesta: number): number {
         let premio = pApuesta * 2
@@ -50,18 +51,16 @@ export class Blackjack {
                     this.resetearJuego();
                     this.ingresarApuesta(pApuesta, pUsuario);
                     console.log("Bienvenido a BlackJack")
-                    let carta: number = this.pedirCartaAleatoria();
-                    console.log("Carta: ", carta);
-                    console.log("Total: ", this.totalSumaUsuario += carta);
+                    console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
+                    console.log("Total: ", this.totalSumaUsuario += this.carta);
                     respuesta = readlineSync.question("Desea pedir otra carta? ");
                     while (respuesta === "si" || respuesta === "no") {
                         if (respuesta === "no") {
                             console.log("Usted se planta con: ", this.totalSumaUsuario);
                             break;
                         } else if (respuesta === "si") {
-                            carta = this.pedirCartaAleatoria();
-                            console.log("Carta: ", carta);
-                            console.log("Total: ", this.totalSumaUsuario += carta);
+                            console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
+                            console.log("Total: ", this.totalSumaUsuario += this.carta);
                             if (this.totalSumaUsuario > 21) {
                                 console.log("Superaste los 21, has perdido.");
                                 console.log("Fin del juego");
@@ -78,14 +77,12 @@ export class Blackjack {
                     }
                     if (this.totalSumaUsuario <= 21) {
                         console.log("......Ahora juega la banca......");
-                        carta = this.pedirCartaAleatoria();
-                        console.log("Carta: ", carta);
-                        console.log("Total de la banca: ", this.totalSumaBanca += carta);
+                        console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
+                        console.log("Total de la banca: ", this.totalSumaBanca += this.carta);
     
                         while (this.totalSumaBanca < 17) {
-                            carta = this.pedirCartaAleatoria();
-                            console.log("Carta: ", carta);
-                            console.log("Total de la banca: ", this.totalSumaBanca += carta);
+                            console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
+                            console.log("Total de la banca: ", this.totalSumaBanca += this.carta);
                         }
                         if (this.totalSumaBanca === this.totalSumaUsuario) {
                             console.log("Empate");
