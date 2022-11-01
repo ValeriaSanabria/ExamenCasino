@@ -12,14 +12,19 @@ export class Casino {
     private blackjack: Blackjack;
     private fondos: number;
 
-    constructor (pNombre: string, pFondos: number, pBlackjack: Blackjack) {
+    constructor (pNombre: string, pFondos: number, pBlackjack: Blackjack, pRuleta: Ruleta) {
     this.nombre = pNombre;
     this.fondos = pFondos;
     this.blackjack = pBlackjack;
+    this.ruleta = pRuleta;
     }
 
 
     public iniciarBlack (pBlackjack: Blackjack, pUsuario: Usuario): void {
         pBlackjack.iniciarJuegoBlackJack (pUsuario);
     }
+
+    public iniciarRuleta (pRuleta: Ruleta, pUsuario: Usuario, pApuesta: number): void {
+        pRuleta.iniciarJuegoRuleta (pUsuario, pApuesta);
+}
 }

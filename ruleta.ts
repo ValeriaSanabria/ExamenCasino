@@ -38,7 +38,7 @@ export class Ruleta {
         return pApuesta * 36;
     }
 
-    iniciarJuego(pUsuario: Usuario, pApuesta: number): void {
+    iniciarJuegoRuleta(pUsuario: Usuario, pApuesta: number): void {
         console.log("Bienvenido a la Ruleta")
         let opcion = "si";
 
