@@ -19,13 +19,27 @@ exports.Tragamonedas4 = void 0;
 var abstractTragamonedas_1 = require("./abstractTragamonedas");
 var Tragamonedas4 = /** @class */ (function (_super) {
     __extends(Tragamonedas4, _super);
-    function Tragamonedas4(psaldo) {
-        return _super.call(this, psaldo) || this;
+    function Tragamonedas4(pSaldo) {
+        return _super.call(this, pSaldo) || this;
     }
     Tragamonedas4.prototype.getSaldo = function () {
         return this.saldo;
     };
-    Tragamonedas4.prototype.ingresarApuesta = function () {
+    Tragamonedas4.prototype.restarApuesta = function (pSaldo) {
+        this.saldo = pSaldo - 100;
+        return this.saldo;
+    };
+    Tragamonedas4.prototype.acreditarPremioDosAciertos = function (pSaldo) {
+        this.saldo = pSaldo + 200;
+        return this.saldo;
+    };
+    Tragamonedas4.prototype.acreditarPremioTresAciertos = function (pSaldo) {
+        this.saldo = pSaldo + 500;
+        return this.saldo;
+    };
+    Tragamonedas4.prototype.acreditarPremioCuatroAciertos = function (pSaldo) {
+        this.saldo = pSaldo + 1000;
+        return this.saldo;
     };
     Tragamonedas4.prototype.iniciarJuego = function () {
         var readlineSync = require('readline-sync');
@@ -41,6 +55,7 @@ var Tragamonedas4 = /** @class */ (function (_super) {
                 break;
             }
             else if (inicio === "si") {
+                this.restarApuesta(this.saldo);
                 rueda1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
                 rueda2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
                 rueda3 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
@@ -49,23 +64,26 @@ var Tragamonedas4 = /** @class */ (function (_super) {
             }
             if (rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4) {
                 console.log("Gano 1000");
+                this.acreditarPremioCuatroAciertos(this.saldo);
+                console.log("Su saldo es: ", this.saldo);
             }
             else if (rueda1 === rueda2 && rueda2 === rueda3) {
                 console.log("Gano 500");
+                this.acreditarPremioTresAciertos(this.saldo);
+                console.log("Su saldo es: ", this.saldo);
             }
             else if (rueda1 === rueda2) {
                 console.log("Gano 200");
+                this.acreditarPremioDosAciertos(this.saldo);
+                console.log("Su saldo es: ", this.saldo);
             }
             else {
                 console.log("Siga Participando...");
+                console.log("Su saldo es: ", this.saldo);
             }
             inicio = readlineSync.question("Desea jugar de nuevo? ");
         }
     };
-    Tragamonedas4.prototype.entregarPremio = function (psaldoUsuario) {
-    };
     return Tragamonedas4;
 }(abstractTragamonedas_1.Tragamonedas));
 exports.Tragamonedas4 = Tragamonedas4;
-// let tragamonedas1: Tragamonedas4 = new Tragamonedas4(100);
-// tragamonedas1.iniciarJuego();
