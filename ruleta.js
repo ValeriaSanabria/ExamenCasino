@@ -25,7 +25,7 @@ var Ruleta = /** @class */ (function () {
     Ruleta.prototype.entregarPremio = function (pApuesta) {
         return pApuesta * 36;
     };
-    Ruleta.prototype.iniciarJuego = function (pUsuario, pApuesta) {
+    Ruleta.prototype.iniciarJuegoRuleta = function (pUsuario, pApuesta) {
         console.log("Bienvenido a la Ruleta");
         var opcion = "si";
         while (opcion === "si" || opcion === "no") {

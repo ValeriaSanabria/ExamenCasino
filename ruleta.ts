@@ -1,9 +1,5 @@
-import {
-    readlineSync
-} from "./main";
-import {
-    Usuario
-} from "./usuario";
+import { readlineSync } from "./main";
+import { Usuario } from "./usuario";
 
 export class Ruleta {
     private numeros: number[];
