@@ -2,19 +2,36 @@ import {Tragamonedas} from "./abstractTragamonedas";
 
 export class Tragamonedas4 extends Tragamonedas{
 
-    constructor(psaldo:number){
-        super (psaldo)
-    }
+  constructor(pSaldo:number){
+    super (pSaldo);
+  }
+  
+  public getSaldo():number{
+    return this.saldo;
+  }
 
-    public getSaldo():number{
-        return this.saldo;
-    }
+  restarApuesta(pSaldo: number):number{
+      this.saldo = pSaldo -100;
+      return this.saldo;
+  }
+  
+  acreditarPremioDosAciertos(pSaldo: number):number{
+      this.saldo = pSaldo + 200;
+      return this.saldo;
+  }
 
-    ingresarApuesta():void{
+  acreditarPremioTresAciertos(pSaldo: number):number{
+      this.saldo = pSaldo + 500;
+      return this.saldo;
 
-    }
+  }
 
-    iniciarJuego():void{
+  acreditarPremioCuatroAciertos(pSaldo: number):number{
+      this.saldo = pSaldo + 1000;
+      return this.saldo;
+  }
+
+  iniciarJuego():void{
         let readlineSync = require('readline-sync');
         let rueda1 = 0;
         let rueda2 = 0;
@@ -29,6 +46,7 @@ export class Tragamonedas4 extends Tragamonedas{
                 break;
             }          
             else if (inicio === "si"){
+            this.restarApuesta(this.saldo);
             rueda1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
             rueda2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
             rueda3 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
@@ -36,33 +54,26 @@ export class Tragamonedas4 extends Tragamonedas{
             console.log(rueda1,rueda2,rueda3,rueda4);
             }
                 if (rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4){
-                console.log("Gano 1000")
-              }
+                console.log("Gano 1000");
+                this.acreditarPremioCuatroAciertos(this.saldo);
+                console.log ("Su saldo es: ", this.saldo);
+                }
                 else if(rueda1 === rueda2 && rueda2 === rueda3){
-                console.log("Gano 500")
-              }
+                console.log("Gano 500");
+                this.acreditarPremioTresAciertos(this.saldo);
+                console.log ("Su saldo es: ", this.saldo);
+                }
                 else if(rueda1 === rueda2 ){
-                console.log("Gano 200")
-              }
+                console.log("Gano 200");
+                this.acreditarPremioDosAciertos(this.saldo);
+                console.log ("Su saldo es: ", this.saldo);
+                }
                  else{
-                console.log("Siga Participando...")
-              }
+                console.log("Siga Participando...");
+                console.log ("Su saldo es: ", this.saldo);
 
-            inicio = readlineSync.question("Desea jugar de nuevo? "); 
-
+                  }
+           inicio = readlineSync.question("Desea jugar de nuevo? "); 
         }
- 
-                   
-
-
-    }
-
-    entregarPremio(psaldoUsuario):void{
-
-    }
-
+  }
 }
-
-// let tragamonedas1: Tragamonedas4 = new Tragamonedas4(100);
-// tragamonedas1.iniciarJuego();
-
