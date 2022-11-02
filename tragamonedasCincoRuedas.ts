@@ -23,7 +23,6 @@ export class Tragamonedas5 extends Tragamonedas{
     acreditarPremioTresAciertos(pSaldo: number):number{
         this.saldo = pSaldo + 500;
         return this.saldo;
-  
     }
 
     acreditarPremioCuatroAciertos(pSaldo: number):number{

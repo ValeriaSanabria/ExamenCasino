@@ -15,7 +15,6 @@ let tragamonedas4 : Tragamonedas4 = new Tragamonedas4(10000);
 let tragamonedas5 : Tragamonedas5 = new Tragamonedas5(10000);
 
 console.log("");
-     
 let juegos: Array<string> = ["Blackjack", "Ruleta", "Tragamonedas simple", "Tragamonedas full"];
 let i: number = 0;
 console.log("                        Bienvenido al casino");
