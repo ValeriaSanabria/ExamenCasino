@@ -23,7 +23,7 @@ public getPerfilId (): number{
 public setNombre (pNombre: string): void {
     this.nombre = pNombre;
 }
-public getNombre(){
+public getNombre(): string {
     return this.nombre;
 }
 public sumarSaldo (pApuesta: number): number {
@@ -35,7 +35,7 @@ public cobrarEmpate (pApuesta: number): number {
 public restarSaldo (pApuesta: number): void {
     this.saldo = this.saldo - pApuesta;
 }
-public getSaldo(){
+public getSaldo(): number {
     return this.saldo;
 }
 
