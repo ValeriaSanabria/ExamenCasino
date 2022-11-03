@@ -1,7 +1,7 @@
 
          Datos recolectados
-Victorias de la Banca: 1
-Perdidas de la Banca: 0
+Victorias de la Banca: 3
+Perdidas de la Banca: 1
 Empates: 0
-Total de dinero recaudado: $2
-Total de dinero entregado: $0
+Total de dinero apostado: $40
+Total de dinero entregado: $20

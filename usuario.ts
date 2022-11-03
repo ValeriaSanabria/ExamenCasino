@@ -25,8 +25,8 @@ export class Usuario {
     public getNombre(): string {
         return this.nombre;
     }
-    public sumarSaldo (pApuesta: number): number {
-    return this.saldo += pApuesta * 2; 
+    public sumarSaldo (pPremio: number): number {
+    return this.saldo += pPremio * 1; 
     }
     public cobrarEmpate (pApuesta: number): number {
         return this.saldo += pApuesta * 1; 

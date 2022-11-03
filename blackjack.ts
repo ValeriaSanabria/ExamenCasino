@@ -106,7 +106,7 @@ export class Blackjack {
                             this.cantGanadasBancas += 1 * 1;                         
                         } else {
                             console.log("Ganaste: $", this.getPremio());
-                            console.log("Su saldo es: ", pUsuario.sumarSaldo(this.apuesta));
+                            console.log("Su saldo es: ", pUsuario.sumarSaldo(this.premio));
                             this.cantPerdidasBanca += 1 * 1;
                             this.totalDineroEntregado += this.getPremio(); 
                         }
@@ -118,7 +118,7 @@ export class Blackjack {
         }       
     }
     public generarEstadisticas(): void {
-        fs.writeFileSync('datosEstadisticosBlackjack.txt', "\n" + "         Datos recolectados" +"\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero recaudado: $" + this.cantDineroApostado + "\n"  + "Total de dinero entregado: $" + this.totalDineroEntregado + "\n" );        
+        fs.writeFileSync('datosEstadisticosBlackjack.txt', "\n" + "         Datos recolectados" +"\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n"  + "Total de dinero entregado: $" + this.totalDineroEntregado + "\n" );        
         console.log(fs.readFileSync('datosEstadisticosBlackjack.txt', 'utf8'));
     }
 }
