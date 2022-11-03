@@ -1,33 +1,31 @@
-import { Blackjack } from "./blackjack";
-import { Usuario } from "./usuario";
-import { Casino } from "./casino"
-import { Tragamonedas4 } from "./tragamonedasCuatroRuedas";
-import { Tragamonedas5 } from "./tragamonedasCincoRuedas";
-import { Ruleta } from "./ruleta";
+import {Blackjack} from "./blackjack";
+import {Usuario} from "./usuario";
+import {Casino} from "./casino"
+import {Tragamonedas4} from "./tragamonedasCuatroRuedas";
+import {Tragamonedas5} from "./tragamonedasCincoRuedas";
+import {Ruleta} from "./ruleta";
 
 export let readlineSync = require('readline-sync');
 let tragamonedas4: Tragamonedas4 = new Tragamonedas4(10000);
 let tragamonedas5: Tragamonedas5 = new Tragamonedas5(10000);
-let usuario1: Usuario = new Usuario (123, "Jugador", 20000);
-let blackjack1: Blackjack = new Blackjack ();
-let ruleta1: Ruleta = new Ruleta ();
-let casino1 : Casino = new Casino ("Las Estrellas", ruleta1, blackjack1, tragamonedas4, tragamonedas5 );
-
+let usuario1: Usuario = new Usuario(123, "Jugador", 20000);
+let blackjack1: Blackjack = new Blackjack();
+let ruleta1: Ruleta = new Ruleta();
+let casino1: Casino = new Casino("Las Estrellas", ruleta1, blackjack1, tragamonedas4, tragamonedas5);
 console.log("");
-     
-let juegos: string [] = ["Blackjack", "Ruleta", "Tragamonedas simple", "Tragamonedas full"];
+let juegos: string[] = ["Blackjack", "Ruleta", "Tragamonedas simple", "Tragamonedas full"];
 let i: number;
+
 console.log("                        Bienvenido al casino");
 i = readlineSync.keyInSelect(juegos, "Elija su juego");
-
-if (juegos[i] === "Blackjack") {           
-  casino1.iniciarBlack (blackjack1, usuario1);
-  casino1.mostrarEstadisticasBlackjack(blackjack1);
+if (juegos[i] === "Blackjack") {
+    casino1.iniciarBlack(blackjack1, usuario1);
+    casino1.mostrarEstadisticasBlackjack(blackjack1);
 } else if (juegos[i] === "Ruleta") {
-  casino1.iniciarRuleta(ruleta1, usuario1)  
+    casino1.iniciarRuleta(ruleta1, usuario1)
 } else if (juegos[i] === "Tragamonedas simple") {
-  tragamonedas4.iniciarJuego(usuario1);    
+    tragamonedas4.iniciarJuego(usuario1);
 } else if (juegos[i] === "Tragamonedas full") {
-  tragamonedas5.iniciarJuego(usuario1);    
+    tragamonedas5.iniciarJuego(usuario1);
 }
-console.log ("Adios vuelva pronto.");
+console.log("Adios vuelva pronto.");
