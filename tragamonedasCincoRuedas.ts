@@ -1,4 +1,7 @@
 import {Tragamonedas} from "./abstractTragamonedas";
+import * as fs from 'fs';
+import { Script } from "vm";
+
 
 export class Tragamonedas5 extends Tragamonedas{
 
@@ -44,6 +47,8 @@ export class Tragamonedas5 extends Tragamonedas{
         let rueda5 = 0;
 
         console.log("Bienvenido al Tragamonedas de cinco ruedas...");
+        console.log(fs.readFileSync('manualTragamonedasFull.txt', 'utf8'));
+
         let inicio = readlineSync.question("Desea Jugar Ya?...");
         while (inicio === "si" || inicio === "no"){
             if (inicio === "no") {

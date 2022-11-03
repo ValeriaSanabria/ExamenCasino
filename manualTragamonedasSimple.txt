@@ -1,0 +1,17 @@
+
+Tragamonedas Simple:
+
+Este juego contiene cuatro ruedas con números al azar ,
+donde la diversion y el dinero se encuentran...
+Tiene una apuesta unica de valor : $ 10.
+Las chances de ganar son muchas:
+ - Si la primera y segunda rueda son iguales:
+        Gana un premio de $ 500.
+ - Si la primera , segunda y tercera rueda son iguales:
+        Gana un premio de $ 1000.
+ - Si la primera , segunda , tercera y cuarta rueda son iguales:
+        Gana un premio de $ 2000.
+
+Mucha Suerte y A GANARRRR....
+
+
