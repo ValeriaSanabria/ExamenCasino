@@ -1,5 +1,6 @@
 
 El objetivo es ganarle a la Banca obteniendo el puntaje mas cercano a 21.
+La Banca dejara de pedir cartas solo si supera los 17 puntos.
 El usuario debe hacer una apuesta al iniciar el juego.
 En caso de ganar la partida el usuario cobrará dos veces lo apostado.
 En caso de perder la partida el usuario perderá su apuesta.

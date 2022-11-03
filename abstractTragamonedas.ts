@@ -1,3 +1,5 @@
+import { Usuario } from "./usuario";
+
 export abstract class Tragamonedas{
     protected premio: number;
     protected saldo: number;
@@ -11,7 +13,7 @@ export abstract class Tragamonedas{
     }
 
 
-    iniciarJuego():void{
+    iniciarJuego(pUsuario: Usuario):void {
     }
 
 

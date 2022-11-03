@@ -1,6 +1,10 @@
 import {Tragamonedas} from "./abstractTragamonedas";
+import { readlineSync } from "./main";
+import { Usuario } from "./usuario";
 
 export class Tragamonedas5 extends Tragamonedas{
+
+
 
     constructor(pSaldo:number){
         super(pSaldo);
@@ -36,8 +40,7 @@ export class Tragamonedas5 extends Tragamonedas{
         return this.saldo;
     }
 
-    iniciarJuego():void{
-        let readlineSync = require('readline-sync');
+    iniciarJuego(pUsuario: Usuario): void {
         let rueda1 = 0;
         let rueda2 = 0;
         let rueda3 = 0;

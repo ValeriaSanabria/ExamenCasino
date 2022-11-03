@@ -4,28 +4,21 @@ exports.Ruleta = void 0;
 var main_1 = require("./main");
 var Ruleta = /** @class */ (function () {
     function Ruleta() {
-        this.numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
-        this.numRojo = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
-        this.numNegro = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35];
+        this.numero = 0;
+        this.apuesta = 0;
+        this.numeroApostado = 0;
     }
-    Ruleta.prototype.getNumeros = function () {
-        return this.numeros;
-    };
-    Ruleta.prototype.getNumRojo = function () {
-        return this.numRojo;
-    };
-    Ruleta.prototype.getNumNegro = function () {
-        return this.numNegro;
+    Ruleta.prototype.getNumero = function () {
+        return this.numero;
     };
     Ruleta.prototype.girarRuleta = function () {
-        var numero;
-        numero = Math.floor(Math.random() * (37 - 0)) + 0;
-        return numero;
+        this.numero = Math.floor(Math.random() * (37 - 0)) + 0;
+        return this.numero;
     };
     Ruleta.prototype.entregarPremio = function (pApuesta) {
         return pApuesta * 36;
     };
-    Ruleta.prototype.iniciarJuegoRuleta = function (pUsuario, pApuesta) {
+    Ruleta.prototype.iniciarJuegoRuleta = function (pUsuario) {
         console.log("Bienvenido a la Ruleta");
         var opcion = "si";
         while (opcion === "si" || opcion === "no") {
@@ -34,16 +27,17 @@ var Ruleta = /** @class */ (function () {
                 break;
             }
             else if (opcion === "si") {
-                var respuesta = main_1.readlineSync.questionInt("A que numero desea apostar? ");
-                pUsuario.restarSaldo(pApuesta);
-                var numero = this.girarRuleta();
-                console.log("El numero de la ruleta es: " + numero);
-                if (numero === respuesta) {
-                    console.log("Usted gana: $", this.entregarPremio(pApuesta));
+                this.apuesta = main_1.readlineSync.question("Ingrese el monto a apostar: ");
+                pUsuario.restarSaldo(this.apuesta);
+                this.numeroApostado = main_1.readlineSync.questionInt("A que numero desea apostar? ");
+                this.numero = this.girarRuleta();
+                console.log("El numero de la ruleta es: ", this.getNumero());
+                if (this.numero === this.numeroApostado) {
+                    console.log("Usted gana: $", this.entregarPremio(this.apuesta));
                 }
                 else {
                     console.log("La casa gana");
-                    console.log("Su saldo actual es: $" + pUsuario.getSaldo());
+                    console.log("Su saldo actual es: $", pUsuario.getSaldo());
                 }
             }
             opcion = main_1.readlineSync.question("Desea jugar de nuevo? ");
