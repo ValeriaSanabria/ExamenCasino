@@ -26,19 +26,19 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         return this.saldo;
     };
     Tragamonedas4.prototype.restarApuesta = function (pSaldo) {
-        this.saldo = pSaldo - 100;
+        this.saldo = pSaldo - 10;
         return this.saldo;
     };
     Tragamonedas4.prototype.acreditarPremioDosAciertos = function (pSaldo) {
-        this.saldo = pSaldo + 200;
-        return this.saldo;
-    };
-    Tragamonedas4.prototype.acreditarPremioTresAciertos = function (pSaldo) {
         this.saldo = pSaldo + 500;
         return this.saldo;
     };
-    Tragamonedas4.prototype.acreditarPremioCuatroAciertos = function (pSaldo) {
+    Tragamonedas4.prototype.acreditarPremioTresAciertos = function (pSaldo) {
         this.saldo = pSaldo + 1000;
+        return this.saldo;
+    };
+    Tragamonedas4.prototype.acreditarPremioCuatroAciertos = function (pSaldo) {
+        this.saldo = pSaldo + 2000;
         return this.saldo;
     };
     Tragamonedas4.prototype.iniciarJuego = function () {
@@ -63,17 +63,17 @@ var Tragamonedas4 = /** @class */ (function (_super) {
                 console.log(rueda1, rueda2, rueda3, rueda4);
             }
             if (rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4) {
-                console.log("Gano 1000");
+                console.log("Gano 2000");
                 this.acreditarPremioCuatroAciertos(this.saldo);
                 console.log("Su saldo es: ", this.saldo);
             }
             else if (rueda1 === rueda2 && rueda2 === rueda3) {
-                console.log("Gano 500");
+                console.log("Gano 1000");
                 this.acreditarPremioTresAciertos(this.saldo);
                 console.log("Su saldo es: ", this.saldo);
             }
             else if (rueda1 === rueda2) {
-                console.log("Gano 200");
+                console.log("Gano 500");
                 this.acreditarPremioDosAciertos(this.saldo);
                 console.log("Su saldo es: ", this.saldo);
             }
