@@ -11,27 +11,27 @@ export class Tragamonedas5 extends Tragamonedas{
     }
 
     restarApuesta(pSaldo: number):number{
-        this.saldo = pSaldo -100;
+        this.saldo = pSaldo - 20;
         return this.saldo;
     }
     
     acreditarPremioDosAciertos(pSaldo: number):number{
-        this.saldo = pSaldo + 200;
-        return this.saldo;
-    }
-
-    acreditarPremioTresAciertos(pSaldo: number):number{
         this.saldo = pSaldo + 500;
         return this.saldo;
     }
 
-    acreditarPremioCuatroAciertos(pSaldo: number):number{
+    acreditarPremioTresAciertos(pSaldo: number):number{
         this.saldo = pSaldo + 1000;
         return this.saldo;
     }
 
-    acreditarPremioCincoAciertos(pSaldo: number):number{
+    acreditarPremioCuatroAciertos(pSaldo: number):number{
         this.saldo = pSaldo + 2000;
+        return this.saldo;
+    }
+
+    acreditarPremioCincoAciertos(pSaldo: number):number{
+        this.saldo = pSaldo + 3000;
         return this.saldo;
     }
 
@@ -60,22 +60,22 @@ export class Tragamonedas5 extends Tragamonedas{
             console.log(rueda1,rueda2,rueda3,rueda4,rueda5);
             }
                 if(rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4 && rueda4 === rueda5){
-                console.log("Gano 2000");
+                console.log("Gano 3000");
                 this.acreditarPremioCincoAciertos(this.saldo);
                 console.log ("Su saldo es: ", this.saldo);
                 }
                 else if(rueda1 === rueda2 && rueda2 === rueda3 && rueda3 === rueda4){
-                console.log("Gano 1000");
+                console.log("Gano 2000");
                 this.acreditarPremioCuatroAciertos(this.saldo);
                 console.log ("Su saldo es: ", this.saldo);
                 }
                 else if(rueda1 === rueda2 && rueda2 === rueda3){
-                console.log("Gano 500");
+                console.log("Gano 1000");
                 this.acreditarPremioTresAciertos(this.saldo);
                 console.log ("Su saldo es: ", this.saldo);
                 }
                 else if(rueda1 === rueda2 ){
-                console.log("Gano 200");
+                console.log("Gano 500");
                 this.acreditarPremioDosAciertos(this.saldo);
                 console.log ("Su saldo es: ", this.saldo);
 
