@@ -17,7 +17,9 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.Tragamonedas4 = void 0;
 var abstractTragamonedas_1 = require("./abstractTragamonedas");
-var fs = require("fs");
+
+var main_1 = require("./main");
+
 var Tragamonedas4 = /** @class */ (function (_super) {
     __extends(Tragamonedas4, _super);
     function Tragamonedas4(pSaldo) {
@@ -42,15 +44,16 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         this.saldo = pSaldo + 2000;
         return this.saldo;
     };
-    Tragamonedas4.prototype.iniciarJuego = function () {
-        var readlineSync = require('readline-sync');
+    Tragamonedas4.prototype.iniciarJuego = function (pUsuario) {
         var rueda1 = 0;
         var rueda2 = 0;
         var rueda3 = 0;
         var rueda4 = 0;
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
+
         console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
-        var inicio = readlineSync.question("Desea Jugar Ya?...");
+        var inicio = main_1.readlineSync.question("Desea Jugar Ya?...");
+
         while (inicio === "si" || inicio === "no") {
             if (inicio === "no") {
                 console.log("Gracias... vuelva pronto.");
@@ -83,7 +86,7 @@ var Tragamonedas4 = /** @class */ (function (_super) {
                 console.log("Siga Participando...");
                 console.log("Su saldo es: ", this.saldo);
             }
-            inicio = readlineSync.question("Desea jugar de nuevo? ");
+            inicio = main_1.readlineSync.question("Desea jugar de nuevo? ");
         }
     };
     return Tragamonedas4;

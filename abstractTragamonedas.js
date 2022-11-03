@@ -8,7 +8,7 @@ var Tragamonedas = /** @class */ (function () {
     Tragamonedas.prototype.getSaldo = function () {
         return this.saldo;
     };
-    Tragamonedas.prototype.iniciarJuego = function () {
+    Tragamonedas.prototype.iniciarJuego = function (pUsuario) {
     };
     return Tragamonedas;
 }());

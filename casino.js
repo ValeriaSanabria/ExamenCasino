@@ -2,17 +2,24 @@
 exports.__esModule = true;
 exports.Casino = void 0;
 var Casino = /** @class */ (function () {
-    function Casino(pNombre, pFondos, pBlackjack, pRuleta) {
+    function Casino(pNombre, pRuleta, pBlackjack, pTragamonedas4, pTragamonedas5) {
         this.nombre = pNombre;
-        this.fondos = pFondos;
         this.blackjack = pBlackjack;
         this.ruleta = pRuleta;
+        this.tragamonedas4 = pTragamonedas4;
+        this.tragamonedas5 = pTragamonedas5;
     }
     Casino.prototype.iniciarBlack = function (pBlackjack, pUsuario) {
         pBlackjack.iniciarJuegoBlackJack(pUsuario);
     };
-    Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario, pApuesta) {
-        pRuleta.iniciarJuegoRuleta(pUsuario, pApuesta);
+    Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario) {
+        pRuleta.iniciarJuegoRuleta(pUsuario);
+    };
+    Casino.prototype.inciarTragamonedas4 = function (pTragamonedas4, pUsuario) {
+        pTragamonedas4.iniciarJuego(pUsuario);
+    };
+    Casino.prototype.inciarTragamonedas5 = function (pTragamonedas5, pUsuario) {
+        pTragamonedas5.iniciarJuego(pUsuario);
     };
     Casino.prototype.mostrarEstadisticasBlackjack = function (pBlackjack) {
         pBlackjack.generarEstadisticas();

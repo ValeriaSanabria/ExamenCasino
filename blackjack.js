@@ -15,35 +15,32 @@ var Blackjack = /** @class */ (function () {
         this.cantPerdidasBanca = 0;
         this.totalDineroEntregado = 0;
         this.apuesta = 0;
+        this.respuesta = "";
+        this.premio = 0;
     }
-    Blackjack.prototype.getPremio = function (pApuesta) {
-        var premio = pApuesta * 2;
-        return premio;
+    Blackjack.prototype.getPremio = function () {
+        this.premio = this.apuesta * 2;
+        return this.premio;
     };
-    Blackjack.prototype.devolverApuesta = function (pUsuario, pApuesta) {
-        var saldo = pUsuario.getSaldo() + pApuesta;
-        return saldo;
+    Blackjack.prototype.devolverApuesta = function (pUsuario) {
+        pUsuario.cobrarEmpate(this.apuesta);
     };
     Blackjack.prototype.resetearJuego = function () {
         this.totalSumaBanca = 0;
         this.totalSumaUsuario = 0;
     };
-    Blackjack.prototype.ingresarApuesta = function (pUsuario) {
-        pUsuario.restarSaldo(this.apuesta);
-    };
     Blackjack.prototype.pedirCartaAleatoria = function () {
-        var carta;
-        carta = Math.floor(Math.random() * (14 - 1)) + 1;
-        return carta;
+        this.carta = Math.floor(Math.random() * (14 - 1)) + 1;
+        return this.carta;
     };
     Blackjack.prototype.iniciarJuegoBlackJack = function (pUsuario) {
-        var respuesta = "si";
-        while (respuesta === "si" || respuesta === "no") {
-            if (respuesta === "no") {
+        this.respuesta = "si";
+        while (this.respuesta === "si" || this.respuesta === "no") {
+            if (this.respuesta === "no") {
                 console.log("Salio de BlackJack");
                 break;
             }
-            else if (respuesta === "si") {
+            else if (this.respuesta === "si") {
                 console.log(this.manual);
                 this.apuesta = main_1.readlineSync.question("Ingrese el monto a apostar: ");
                 if (this.apuesta > pUsuario.getSaldo()) {
@@ -52,17 +49,17 @@ var Blackjack = /** @class */ (function () {
                 }
                 else {
                     this.resetearJuego();
-                    this.ingresarApuesta(pUsuario);
+                    pUsuario.restarSaldo(this.apuesta);
                     console.log("Bienvenido a BlackJack");
                     console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
                     console.log("Total: ", this.totalSumaUsuario += this.carta);
-                    respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
-                    while (respuesta === "si" || respuesta === "no") {
-                        if (respuesta === "no") {
+                    this.respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
+                    while (this.respuesta === "si" || this.respuesta === "no") {
+                        if (this.respuesta === "no") {
                             console.log("Usted se planta con: ", this.totalSumaUsuario);
                             break;
                         }
-                        else if (respuesta === "si") {
+                        else if (this.respuesta === "si") {
                             console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
                             console.log("Total: ", this.totalSumaUsuario += this.carta);
                             if (this.totalSumaUsuario > 21) {
@@ -80,7 +77,7 @@ var Blackjack = /** @class */ (function () {
                         else {
                             console.log("Dato invalido ");
                         }
-                        respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
+                        this.respuesta = main_1.readlineSync.question("Desea pedir otra carta? ");
                     }
                     if (this.totalSumaUsuario <= 21) {
                         console.log("......Ahora juega la banca......");
@@ -102,13 +99,13 @@ var Blackjack = /** @class */ (function () {
                             this.cantGanadasBancas += 1 * 1;
                         }
                         else {
-                            console.log("Ganaste: $", this.getPremio(this.apuesta));
+                            console.log("Ganaste: $", this.getPremio());
                             console.log("Su saldo es: ", pUsuario.sumarSaldo(this.apuesta));
                             this.cantPerdidasBanca += 1 * 1;
-                            this.totalDineroEntregado += this.getPremio(this.apuesta);
+                            this.totalDineroEntregado += this.getPremio();
                         }
                     }
-                    respuesta = main_1.readlineSync.question("Desea jugar de nuevo? ");
+                    this.respuesta = main_1.readlineSync.question("Desea jugar de nuevo? ");
                     this.cantDineroApostado += this.apuesta * 1;
                 }
             }
