@@ -19,8 +19,8 @@ var Usuario = /** @class */ (function () {
     Usuario.prototype.getNombre = function () {
         return this.nombre;
     };
-    Usuario.prototype.sumarSaldo = function (pApuesta) {
-        return this.saldo += pApuesta * 2;
+    Usuario.prototype.sumarSaldo = function (pPremio) {
+        return this.saldo += pPremio * 1;
     };
     Usuario.prototype.cobrarEmpate = function (pApuesta) {
         return this.saldo += pApuesta * 1;
