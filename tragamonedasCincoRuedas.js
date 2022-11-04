@@ -17,9 +17,8 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.Tragamonedas5 = void 0;
 var abstractTragamonedas_1 = require("./abstractTragamonedas");
-
 var main_1 = require("./main");
-
+var fs = require("fs");
 var Tragamonedas5 = /** @class */ (function (_super) {
     __extends(Tragamonedas5, _super);
     function Tragamonedas5(pSaldo) {
@@ -55,10 +54,8 @@ var Tragamonedas5 = /** @class */ (function (_super) {
         var rueda4 = 0;
         var rueda5 = 0;
         console.log("Bienvenido al Tragamonedas de cinco ruedas...");
-
         console.log(fs.readFileSync('manualTragamonedasFull.txt', 'utf8'));
         var inicio = main_1.readlineSync.question("Desea Jugar Ya?...");
-
         while (inicio === "si" || inicio === "no") {
             if (inicio === "no") {
                 console.log("Gracias... vuelva pronto.");

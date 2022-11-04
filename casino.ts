@@ -18,8 +18,8 @@ export class Casino {
         this.tragamonedas4 = pTragamonedas4;
         this.tragamonedas5 = pTragamonedas5
     }
-    public iniciarBlack(pBlackjack: Blackjack, pUsuario: Usuario): void {
-        pBlackjack.iniciarJuegoBlackJack(pUsuario);
+    public iniciarBlackjack (pBlackjack: Blackjack, pUsuario: Usuario): void {
+        pBlackjack.iniciarJuegoBlackJack (pUsuario);
     }
     public iniciarRuleta(pRuleta: Ruleta, pUsuario: Usuario): void {
         pRuleta.iniciarJuegoRuleta(pUsuario);

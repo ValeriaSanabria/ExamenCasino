@@ -1,6 +1,6 @@
-import {Tragamonedas} from "./abstractTragamonedas";
-import {Usuario} from "./usuario";
-import {readlineSync} from "./main";
+import { Tragamonedas } from "./abstractTragamonedas";
+import { Usuario } from "./usuario";
+import { readlineSync } from "./main";
 import * as fs from 'fs';
 
 export class Tragamonedas4 extends Tragamonedas {
@@ -11,10 +11,10 @@ export class Tragamonedas4 extends Tragamonedas {
   public getSaldo(): number {
     return this.saldo;
   }
-  restarApuesta(pSaldo: number): number {
-    this.saldo = pSaldo - 10;
-    return this.saldo;
-  }
+  restarApuesta(pSaldo: number):number {
+      this.saldo = pSaldo -10;
+      return this.saldo;
+ }
   acreditarPremioDosAciertos(pSaldo: number): number {
     this.saldo = pSaldo + 500;
     return this.saldo;

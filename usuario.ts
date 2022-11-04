@@ -11,7 +11,7 @@ export class Usuario {
     public setId(pPerfilId: number): void {
         this.perfilId = pPerfilId;
     }
-    public getPerfilId(): number {
+    public getPerfilId (): number {
         return this.perfilId;
     }
     public setNombre(pNombre: string): void {
