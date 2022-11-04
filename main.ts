@@ -18,16 +18,20 @@ console.log("");
 let juegos: string [] = ["Blackjack", "Ruleta", "Tragamonedas simple", "Tragamonedas full"];
 let i: number;
 console.log("                        Bienvenido al casino");
+
 i = readlineSync.keyInSelect(juegos, "Elija su juego");
 
-if (juegos[i] === "Blackjack") {           
-  casino1.iniciarBlack (blackjack1, usuario1);
-  casino1.mostrarEstadisticasBlackjack(blackjack1);
-} else if (juegos[i] === "Ruleta") {
-  casino1.iniciarRuleta(ruleta1, usuario1)  
-} else if (juegos[i] === "Tragamonedas simple") {
-  tragamonedas4.iniciarJuego(usuario1);    
-} else if (juegos[i] === "Tragamonedas full") {
-  tragamonedas5.iniciarJuego(usuario1);    
+while ( i == 0 || i == 1 || i == 2 || i == 3) {
+  if (juegos[i] == "Blackjack") {           
+    casino1.iniciarBlackjack (blackjack1, usuario1);
+    casino1.mostrarEstadisticasBlackjack(blackjack1);
+  } else if (juegos[i] == "Ruleta") {
+    casino1.iniciarRuleta(ruleta1, usuario1)  
+  } else if (juegos[i] == "Tragamonedas simple") {
+    tragamonedas4.iniciarJuego(usuario1);    
+  } else if (juegos[i] == "Tragamonedas full") {
+    tragamonedas5.iniciarJuego(usuario1);    
+  }
+  console.log ("Adios vuelva pronto.");
+  i = readlineSync.keyInSelect(juegos, "Elija su juego");
 }
-console.log ("Adios vuelva pronto.");

@@ -5,12 +5,10 @@ var main_1 = require("./main");
 var fs = require("fs");
 var Ruleta = /** @class */ (function () {
     function Ruleta() {
-
         this.numero = 0;
         this.apuesta = 0;
         this.numeroApostado = 0;
         this.manual = fs.readFileSync('manualRuleta.txt', 'utf8');
-
     }
     Ruleta.prototype.getNumero = function () {
         return this.numero;
@@ -22,9 +20,8 @@ var Ruleta = /** @class */ (function () {
     Ruleta.prototype.entregarPremio = function (pApuesta) {
         return pApuesta * 36;
     };
-
     Ruleta.prototype.iniciarJuegoRuleta = function (pUsuario) {
-
+        console.log("Bienvenido a la Ruleta");
         var opcion = "si";
         while (opcion === "si" || opcion === "no") {
             if (opcion === "no") {
@@ -32,7 +29,7 @@ var Ruleta = /** @class */ (function () {
                 break;
             }
             else if (opcion === "si") {
-
+                console.log(this.manual);
                 this.apuesta = main_1.readlineSync.question("Ingrese el monto a apostar: ");
                 pUsuario.restarSaldo(this.apuesta);
                 this.numeroApostado = main_1.readlineSync.questionInt("A que numero desea apostar? ");
@@ -40,7 +37,6 @@ var Ruleta = /** @class */ (function () {
                 console.log("El numero de la ruleta es: ", this.getNumero());
                 if (this.numero === this.numeroApostado) {
                     console.log("Usted gana: $", this.entregarPremio(this.apuesta));
-
                 }
                 else {
                     console.log("La casa gana");

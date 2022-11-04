@@ -9,7 +9,7 @@ var Casino = /** @class */ (function () {
         this.tragamonedas4 = pTragamonedas4;
         this.tragamonedas5 = pTragamonedas5;
     }
-    Casino.prototype.iniciarBlack = function (pBlackjack, pUsuario) {
+    Casino.prototype.iniciarBlackjack = function (pBlackjack, pUsuario) {
         pBlackjack.iniciarJuegoBlackJack(pUsuario);
     };
     Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario) {

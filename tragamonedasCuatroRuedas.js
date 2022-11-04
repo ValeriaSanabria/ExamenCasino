@@ -17,9 +17,8 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.Tragamonedas4 = void 0;
 var abstractTragamonedas_1 = require("./abstractTragamonedas");
-
 var main_1 = require("./main");
-
+var fs = require("fs");
 var Tragamonedas4 = /** @class */ (function (_super) {
     __extends(Tragamonedas4, _super);
     function Tragamonedas4(pSaldo) {
@@ -50,10 +49,8 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         var rueda3 = 0;
         var rueda4 = 0;
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
-
         console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
         var inicio = main_1.readlineSync.question("Desea Jugar Ya?...");
-
         while (inicio === "si" || inicio === "no") {
             if (inicio === "no") {
                 console.log("Gracias... vuelva pronto.");

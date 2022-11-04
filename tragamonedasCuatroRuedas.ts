@@ -1,8 +1,7 @@
-import {Tragamonedas} from "./abstractTragamonedas";
-
+import { Tragamonedas } from "./abstractTragamonedas";
 import { Usuario } from "./usuario";
 import { readlineSync } from "./main";
-
+import * as fs from 'fs';
 
 export class Tragamonedas4 extends Tragamonedas {
 
@@ -14,7 +13,7 @@ export class Tragamonedas4 extends Tragamonedas {
     return this.saldo;
   }
 
-  restarApuesta(pSaldo: number):number{
+  restarApuesta(pSaldo: number):number {
       this.saldo = pSaldo -10;
       return this.saldo;
   }
