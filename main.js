@@ -21,8 +21,8 @@ console.log("                        Bienvenido al casino");
 i = exports.readlineSync.keyInSelect(juegos, "Elija su juego");
 while (i == 0 || i == 1 || i == 2 || i == 3) {
     if (juegos[i] == "Blackjack") {
-        casino1.iniciarBlackjack(blackjack1, usuario1);
-        casino1.mostrarEstadisticasBlackjack(blackjack1);
+        casino1.iniciarBlackjack(usuario1);
+        casino1.mostrarEstadisticasBlackjack();
     }
     else if (juegos[i] == "Ruleta") {
         casino1.iniciarRuleta(ruleta1, usuario1);

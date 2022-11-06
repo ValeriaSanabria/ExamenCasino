@@ -1,5 +1,5 @@
-import {readlineSync} from "./main";
-import {Usuario} from "./usuario";
+import { readlineSync } from "./main";
+import { Usuario } from "./usuario";
 import * as fs from 'fs';
 
 export class Blackjack {
@@ -27,7 +27,7 @@ export class Blackjack {
         this.cantPerdidasBanca = 0;
         this.totalDineroEntregado = 0;
         this.apuesta = 0;
-        this.respuesta = "si";
+        this.respuesta = "";
         this.premio = 0;
     }
     public getPremio(): number {
@@ -49,13 +49,15 @@ export class Blackjack {
         this.carta = Math.floor(Math.random() * (14 - 1)) + 1;
         return this.carta;
     }
-    public iniciarJuegoBlackJack(pUsuario: Usuario): void {
+    public iniciarJuegoBlackJack(pUsuario: Usuario): void {        
+        console.log (this.manual);
+        this.respuesta = readlineSync.question("Desea jugar? ");
+
         while (this.respuesta == "si" || this.respuesta == "no") {
             if (this.respuesta == "no") {
                 console.log ("Salio de BlackJack");
                 break;
             } else if (this.respuesta == "si") {
-                console.log (this.manual);
                 this.ingresarApuesta();
                 if (this.apuesta > pUsuario.getSaldo()) {
                     console.log("Lo siento, fondo insuficiente, adios");
@@ -119,8 +121,8 @@ export class Blackjack {
             }
         }
     }
-    public generarEstadisticas(): void {
-        fs.writeFileSync('datosEstadisticosBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n" + "Total de dinero entregado: $" + this.totalDineroEntregado + "\n");
-        console.log(fs.readFileSync('datosEstadisticosBlackjack.txt', 'utf8'));
+    public mostrarEstadisticas(): void {
+        fs.writeFileSync('estadisticasBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n" + "Total de premios pagados: $" + this.totalDineroEntregado + "\n");
+        console.log(fs.readFileSync('estadisticasBlackjack.txt', 'utf8'));
     }
 }

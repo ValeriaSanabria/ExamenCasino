@@ -18,8 +18,15 @@ export class Casino {
         this.tragamonedas4 = pTragamonedas4;
         this.tragamonedas5 = pTragamonedas5
     }
-    public iniciarBlackjack (pBlackjack: Blackjack, pUsuario: Usuario): void {
-        pBlackjack.iniciarJuegoBlackJack (pUsuario);
+    public getNombre (): void {
+        this.nombre;
+    }
+    public set (pNombre: string): string {
+        this.nombre = pNombre;
+        return this.nombre;
+    }
+    public iniciarBlackjack (pUsuario: Usuario): void {
+        this.blackjack.iniciarJuegoBlackJack(pUsuario);
     }
     public iniciarRuleta(pRuleta: Ruleta, pUsuario: Usuario): void {
         pRuleta.iniciarJuegoRuleta(pUsuario);
@@ -30,8 +37,8 @@ export class Casino {
     public inciarTragamonedas5(pUsuario: Usuario): void {
         this.tragamonedas5.iniciarJuego(pUsuario)
     }
-    public mostrarEstadisticasBlackjack(pBlackjack: Blackjack): void {
-        pBlackjack.generarEstadisticas();
+    public mostrarEstadisticasBlackjack(): void {
+        this.blackjack.mostrarEstadisticas();
     }
     public mostrarEstadisticasTragamonedas4() {
         this.tragamonedas4.mostrarEstadisticasTragamonedas4();
@@ -39,5 +46,4 @@ export class Casino {
     public mostrarEstadisticasTragamonedas5() {
         this.tragamonedas5.mostrarEstadisticasTragamonedas5();
     }
-
 }
