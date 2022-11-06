@@ -1,17 +1,17 @@
-import {Blackjack} from "./blackjack";
-import {Usuario} from "./usuario";
-import {Ruleta} from "./ruleta";
-import {Tragamonedas4} from "./tragamonedasCuatroRuedas";
-import {Tragamonedas5} from "./tragamonedasCincoRuedas";
+import { Blackjack } from "./blackjack";
+import { Usuario } from "./usuario";
+import { Ruleta } from "./ruleta";
+import { TragamonedasCuatroRuedas } from "./tragamonedasCuatroRuedas";
+import { TragamonedasCincoRuedas } from "./tragamonedasCincoRuedas";
 
 export class Casino {
     private nombre: string;
     private ruleta: Ruleta;
     private blackjack: Blackjack;
-    private tragamonedas4: Tragamonedas4;
-    private tragamonedas5: Tragamonedas5;
+    private tragamonedas4: TragamonedasCuatroRuedas;
+    private tragamonedas5: TragamonedasCincoRuedas;
 
-    constructor(pNombre: string, pRuleta: Ruleta, pBlackjack: Blackjack, pTragamonedas4: Tragamonedas4, pTragamonedas5: Tragamonedas5) {
+    constructor(pNombre: string, pRuleta: Ruleta, pBlackjack: Blackjack, pTragamonedas4: TragamonedasCuatroRuedas, pTragamonedas5: TragamonedasCincoRuedas) {
         this.nombre = pNombre;
         this.blackjack = pBlackjack;
         this.ruleta = pRuleta;
@@ -21,12 +21,12 @@ export class Casino {
     public getNombre (): void {
         this.nombre;
     }
-    public set (pNombre: string): string {
+    public setNombre (pNombre: string): string {
         this.nombre = pNombre;
         return this.nombre;
     }
     public iniciarBlackjack (pUsuario: Usuario): void {
-        this.blackjack.iniciarJuegoBlackJack(pUsuario);
+        this.blackjack.iniciarJuegoBlackjack(pUsuario);
     }
     public iniciarRuleta(pUsuario: Usuario): void {
         this.ruleta.iniciarJuegoRuleta(pUsuario);
@@ -51,8 +51,8 @@ export class Casino {
     }
     public resetearEstadisticas(): void {
         this.ruleta.resetearEstidisticasRuleta();
-        this.blackjack.resetearEstidisticasBlackjack();
+        this.blackjack.resetearEstadisticasBlackjack();
         this.tragamonedas4.resetearEstidisticasCuatroRuedas();
-        this.tragamonedas5.resetearEstidisticasCincoRuedas();
+        this.tragamonedas5.resetearEstadisticasCincoRuedas();
     }    
 }
