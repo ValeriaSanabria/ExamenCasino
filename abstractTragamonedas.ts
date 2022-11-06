@@ -5,7 +5,7 @@ export abstract class Tragamonedas {
     protected cantRuedas: number;
     protected cantJugadas: number;
     protected premiosPagados: number;
-    protected dineroRecaudado: number
+    protected dineroRecaudado: number;
     protected apuesta: number;
     protected inicio: string;   
 
@@ -26,6 +26,6 @@ export abstract class Tragamonedas {
         this.dineroRecaudado += this.apuesta;
         console.log(this.listaRuedas);
       }
-    iniciarJuego(pUsuario: Usuario): void {
+     public iniciarJuego(pUsuario: Usuario): void {
     }
 }

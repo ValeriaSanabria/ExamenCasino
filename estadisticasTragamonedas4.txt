@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-
-         Datos recolectados
-Dinero Recaudado: $ 10
-Premio Pagado: $ 0
-Cantidad de veces jugadas: 1
-=======
  
->>>>>>> origin
