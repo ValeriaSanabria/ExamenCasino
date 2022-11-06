@@ -1,6 +1,5 @@
 import {Tragamonedas} from "./abstractTragamonedas";
 import * as fs from 'fs';
-import { Script } from "vm";
 
 
 export class Tragamonedas5 extends Tragamonedas{
