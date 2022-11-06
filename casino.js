@@ -15,14 +15,20 @@ var Casino = /** @class */ (function () {
     Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario) {
         pRuleta.iniciarJuegoRuleta(pUsuario);
     };
-    Casino.prototype.inciarTragamonedas4 = function (pTragamonedas4, pUsuario) {
-        pTragamonedas4.iniciarJuego(pUsuario);
+    Casino.prototype.inciarTragamonedas4 = function (pUsuario) {
+        this.tragamonedas4.iniciarJuego(pUsuario);
     };
-    Casino.prototype.inciarTragamonedas5 = function (pTragamonedas5, pUsuario) {
-        pTragamonedas5.iniciarJuego(pUsuario);
+    Casino.prototype.inciarTragamonedas5 = function (pUsuario) {
+        this.tragamonedas5.iniciarJuego(pUsuario);
     };
     Casino.prototype.mostrarEstadisticasBlackjack = function (pBlackjack) {
         pBlackjack.generarEstadisticas();
+    };
+    Casino.prototype.mostrarEstadisticasTragamonedas4 = function () {
+        this.tragamonedas4.mostrarEstadisticasTragamonedas4();
+    };
+    Casino.prototype.mostrarEstadisticasTragamonedas5 = function () {
+        this.tragamonedas5.mostrarEstadisticasTragamonedas5();
     };
     return Casino;
 }());
