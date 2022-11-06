@@ -71,7 +71,7 @@ public entregarPremio(pUsuario: Usuario): void {
 public controlarNumero(): void {
     for (let i: number = 0; i < this.listaNumApostados.length; i++) {
         if (this.listaNumApostados[i] == this.numeroDeRuleta) {
-            this.numeroApostado = this.numeroDeRuleta
+            this.numeroApostado = this.numeroDeRuleta;
             break;
         }
     }

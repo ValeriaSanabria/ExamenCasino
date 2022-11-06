@@ -12,12 +12,12 @@ var Casino = /** @class */ (function () {
     Casino.prototype.getNombre = function () {
         this.nombre;
     };
-    Casino.prototype.set = function (pNombre) {
+    Casino.prototype.setNombre = function (pNombre) {
         this.nombre = pNombre;
         return this.nombre;
     };
     Casino.prototype.iniciarBlackjack = function (pUsuario) {
-        this.blackjack.iniciarJuegoBlackJack(pUsuario);
+        this.blackjack.iniciarJuegoBlackjack(pUsuario);
     };
     Casino.prototype.iniciarRuleta = function (pUsuario) {
         this.ruleta.iniciarJuegoRuleta(pUsuario);
@@ -42,9 +42,9 @@ var Casino = /** @class */ (function () {
     };
     Casino.prototype.resetearEstadisticas = function () {
         this.ruleta.resetearEstidisticasRuleta();
-        this.blackjack.resetearEstidisticasBlackjack();
+        this.blackjack.resetearEstadisticasBlackjack();
         this.tragamonedas4.resetearEstidisticasCuatroRuedas();
-        this.tragamonedas5.resetearEstidisticasCincoRuedas();
+        this.tragamonedas5.resetearEstadisticasCincoRuedas();
     };
     return Casino;
 }());

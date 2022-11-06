@@ -3,7 +3,7 @@ import { Usuario } from "./usuario";
 import { readlineSync } from "./main";
 import * as fs from 'fs';
 
-export class Tragamonedas4 extends Tragamonedas { 
+export class TragamonedasCuatroRuedas extends Tragamonedas { 
 
   constructor(pCantRuedas: number) {
     super(pCantRuedas)
