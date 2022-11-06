@@ -1,19 +1,20 @@
 
 Tragamonedas Full:
 
-Este juego contiene cinco ruedas con números al azar ,
+Este juego contiene cinco ruedas con números al azar,
 donde la diversion y el dinero se encuentran...
-Tiene una apuesta unica de valor : $ 20.
+Tiene una apuesta única de valor : $ 30.
 Las chances de ganar son muchas:
  - Si la primera y segunda rueda son iguales:
-        Gana un premio de $ 500.
- - Si la primera , segunda y tercera rueda son iguales:
-        Gana un premio de $ 1000.
- - Si la primera , segunda y tercera y cuarta rueda son iguales:
-        Gana un premio de $ 2000.
- - Si la primera , segunda , tercera , cuarta y quinta rueda son iguales:
+        Gana un premio de $ 1500.
+ - Si la primera , segunda y tercera ruedas son iguales:
         Gana un premio de $ 3000.
+ - Si la primera , segunda y tercera y cuarta ruedas son iguales:
+        Gana un premio de $ 7000.
+ - Si la primera , segunda , tercera , cuarta y quinta ruedas son iguales:
+        Gana un premio de $ 30000.
+ - Y además si obtienes los cincos ruedas tienen el número 7, usted gana el pozo acumulado,
+ que va incrementandose con cada apuesta.
 
 
-Mucha Suerte y A GANARRRR....
-
+                     Mucha Suerte y A GANARRRR....

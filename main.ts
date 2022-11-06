@@ -6,8 +6,8 @@ import {Tragamonedas5} from "./tragamonedasCincoRuedas";
 import {Ruleta} from "./ruleta";
 
 export let readlineSync = require('readline-sync');
-let tragamonedas4: Tragamonedas4 = new Tragamonedas4(10000);
-let tragamonedas5: Tragamonedas5 = new Tragamonedas5(10000);
+let tragamonedas4: Tragamonedas4 = new Tragamonedas4(4);
+let tragamonedas5: Tragamonedas5 = new Tragamonedas5(5);
 let usuario1: Usuario = new Usuario(123, "Jugador", 20000);
 let blackjack1: Blackjack = new Blackjack();
 let ruleta1: Ruleta = new Ruleta();
@@ -27,9 +27,11 @@ while ( i == 0 || i == 1 || i == 2 || i == 3) {
   } else if (juegos[i] == "Ruleta") {
     casino1.iniciarRuleta(ruleta1, usuario1)  
   } else if (juegos[i] == "Tragamonedas simple") {
-    tragamonedas4.iniciarJuego(usuario1);    
+    casino1.inciarTragamonedas4(usuario1);
+    casino1.mostrarEstadisticasTragamonedas4();   
   } else if (juegos[i] == "Tragamonedas full") {
-    tragamonedas5.iniciarJuego(usuario1);    
+   casino1.inciarTragamonedas5(usuario1);
+   casino1.mostrarEstadisticasTragamonedas5();    
   }
   console.log ("Adios vuelva pronto.");
   i = readlineSync.keyInSelect(juegos, "Elija su juego");
