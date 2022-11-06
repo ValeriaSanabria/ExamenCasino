@@ -1,0 +1,7 @@
+
+         Datos recolectados
+Victorias de la Banca: 4
+Perdidas de la Banca: 9
+Empates: 1
+Total de dinero apostado: $670980
+Total de premios pagados: $650000
