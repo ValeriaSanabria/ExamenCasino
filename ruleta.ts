@@ -3,49 +3,105 @@ import {Usuario} from "./usuario";
 import * as fs from 'fs';
 
 export class Ruleta {
-    private numero: number;
+    private numeroDeRuleta: number;
+    private listaNumApostados: number[];
     private numeroApostado: number;
     private apuesta: number;
     private manual: string;
+    private respuesta: string;
+    private cantPartidas: number;
+    private cantGanadas: number;
+    private cantPerdidas: number;
+    private cantDineroEntregado: number;
+    private cantDineroRecaudado: number;
 
     constructor() {
-        this.numero = 0;
+        this.listaNumApostados = [];
+        this.numeroDeRuleta = 0;
         this.apuesta = 0;
         this.numeroApostado = 0;
         this.manual = fs.readFileSync('manualRuleta.txt', 'utf8');
+        this.respuesta = "";
+        this.cantPartidas = 0;
+        this.cantGanadas = 0;
+        this.cantPerdidas = 0;
+        this.cantDineroEntregado = 0;
+        this.cantDineroRecaudado = 0;
     }
-    getNumero(): number {
-        return this.numero;
+    public getNumero(): number {
+        return this.numeroDeRuleta;
     }
-    girarRuleta(): number {
-        this.numero = Math.floor(Math.random() * (37 - 0)) + 0;
-        return this.numero;
-    }
-    entregarPremio(pApuesta: number): number {
-        return pApuesta * 36;
-    }
-    iniciarJuegoRuleta(pUsuario: Usuario): void {
-        console.log("Bienvenido a la Ruleta")
-        let opcion = "si";
-        while (opcion === "si" || opcion === "no") {
-            if (opcion === "no") {
-                console.log("Usted se retira con un saldo: $", pUsuario.getSaldo());
+    public apostarNumeros(pUsuario: Usuario): void {
+        this.listaNumApostados = [];
+        while (this.respuesta == "si" || this.respuesta == "no" || this.respuesta == "") {
+            if (this.respuesta == "no" ) {
+                console.log( "No va maaaaas");
                 break;
-            } else if (opcion === "si") {
-                console.log(this.manual);
+            } else if (this.respuesta == "si") {
                 this.apuesta = readlineSync.question("Ingrese el monto a apostar: ");
                 pUsuario.restarSaldo(this.apuesta);
-                this.numeroApostado = readlineSync.questionInt("A que numero desea apostar? ");
-                this.numero = this.girarRuleta();
-                console.log("El numero de la ruleta es: ", this.getNumero());
-                if (this.numero === this.numeroApostado) {
-                    console.log("Usted gana: $", this.entregarPremio(this.apuesta));
+                this.numeroApostado = readlineSync.question("Ingrese el numero a apostar: ");
+                if (this.numeroApostado > -1 && this.numeroApostado < 37) {
+                    this.listaNumApostados.push(this.numeroApostado);
+                    console.log("Sus numeros apostados son: ", this.listaNumApostados);                                      
                 } else {
-                    console.log("La casa gana");
-                    console.log("Su saldo actual es: $", pUsuario.getSaldo());
+                    console.log ("Numero fuera de rango, elija otro");
+                    pUsuario.sumarSaldo(this.apuesta);                    
                 }
+            } else if (this.respuesta == "") {
+                console.log("Dato invalido");                
             }
-            opcion = readlineSync.question("Desea jugar de nuevo? ");
+            this.respuesta = readlineSync.question("Desea apostar otro numero?: ");
+        }
+    }
+    public girarRuleta(): void {
+        this.numeroDeRuleta = Math.floor(Math.random() * (36 - (-1))) + (-1);        
+        console.log("El numero de la ruleta es: ", this.getNumero());
+        
+    }
+    public entregarPremio(pApuesta: number): number {
+        return pApuesta * 36;
+    }
+    public controlarNumero(): void {
+        for (let i: number = 0; i < this.listaNumApostados.length; i++) {
+            if (this.listaNumApostados[i] == this.numeroDeRuleta) { 
+                this.numeroApostado = this.numeroDeRuleta
+                break;
+            }                                                                                                      
+        } 
+    }
+    public mostrarEstadisticas(): void {
+        fs.writeFileSync('estadisticasRuleta.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de partidas jugadas: " + this.cantPartidas + "\n" + "Total de cantidades de veces ganadas de la casa:" + this.cantGanadas + "\n" + "Cantidad de veces perdidas: " + this.cantPerdidas + "\n" + "Total de premios entregados: $" + this.cantDineroEntregado + "\n" + "Total de dinero recaudado: $" + this.cantDineroRecaudado + "\n");
+        console.log(fs.readFileSync('estadisticasRuleta.txt', 'utf8'));
+    }
+
+    public iniciarJuegoRuleta(pUsuario: Usuario): void {        
+        console.log(this.manual);
+        this.respuesta = readlineSync.question("Desea jugar a la ruleta? ");
+        
+        while (this.respuesta == "si" || this.respuesta == "no") {
+            if (this.respuesta == "no") {
+                console.log("Usted se retira con un saldo: $", pUsuario.getSaldo());
+                break;
+            } else if (this.respuesta == "si") {   
+                console.log("Bienvenido a la Ruleta");
+                this.cantPartidas += this.cantPartidas * 1;  
+                this.apostarNumeros(pUsuario);
+                this.girarRuleta();
+                this.controlarNumero();
+                if (this.numeroApostado == this.numeroDeRuleta) {  
+                    console.log("Usted gana: $", this.entregarPremio(this.apuesta));                    
+                    console.log("Su saldo es: $", pUsuario.getSaldo());
+                    this.cantPerdidas += this.cantPerdidas + 1;
+                    this.cantDineroEntregado += this.apuesta * 36;
+                } else {
+                    console.log("La casa gana " );
+                    console.log("Su saldo es: $", pUsuario.getSaldo());
+                    this.cantGanadas += this.cantGanadas + 1;
+                    this.cantDineroRecaudado += this.apuesta * 1;
+                }               
+            }
+            this.respuesta = readlineSync.question("Desea jugar de nuevo? ");
         }
     }
 }

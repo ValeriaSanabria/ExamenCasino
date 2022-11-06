@@ -19,8 +19,8 @@ var Casino = /** @class */ (function () {
     Casino.prototype.iniciarBlackjack = function (pUsuario) {
         this.blackjack.iniciarJuegoBlackJack(pUsuario);
     };
-    Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario) {
-        pRuleta.iniciarJuegoRuleta(pUsuario);
+    Casino.prototype.iniciarRuleta = function (pUsuario) {
+        this.ruleta.iniciarJuegoRuleta(pUsuario);
     };
     Casino.prototype.inciarTragamonedas4 = function (pUsuario) {
         this.tragamonedas4.iniciarJuego(pUsuario);
@@ -30,6 +30,9 @@ var Casino = /** @class */ (function () {
     };
     Casino.prototype.mostrarEstadisticasBlackjack = function () {
         this.blackjack.mostrarEstadisticas();
+    };
+    Casino.prototype.mostrarEstadistcasRuleta = function () {
+        this.ruleta.mostrarEstadisticas();
     };
     Casino.prototype.mostrarEstadisticasTragamonedas4 = function () {
         this.tragamonedas4.mostrarEstadisticasTragamonedas4();
