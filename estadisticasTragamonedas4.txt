@@ -1,5 +1,5 @@
 
          Datos recolectados
-Dinero Recaudado: $ 30
+Dinero Recaudado: $ 100
 Premio Pagado: $ 0
-Cantidad de veces jugadas: 3
+Cantidad de veces jugadas: 10

@@ -1,7 +1,0 @@
-
-         Datos recolectados
-Victorias de la Banca: 1
-Perdidas de la Banca: 0
-Empates: 0
-Total de dinero apostado: $20
-Total de dinero entregado: $0
