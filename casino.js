@@ -9,8 +9,15 @@ var Casino = /** @class */ (function () {
         this.tragamonedas4 = pTragamonedas4;
         this.tragamonedas5 = pTragamonedas5;
     }
-    Casino.prototype.iniciarBlackjack = function (pBlackjack, pUsuario) {
-        pBlackjack.iniciarJuegoBlackJack(pUsuario);
+    Casino.prototype.getNombre = function () {
+        this.nombre;
+    };
+    Casino.prototype.set = function (pNombre) {
+        this.nombre = pNombre;
+        return this.nombre;
+    };
+    Casino.prototype.iniciarBlackjack = function (pUsuario) {
+        this.blackjack.iniciarJuegoBlackJack(pUsuario);
     };
     Casino.prototype.iniciarRuleta = function (pRuleta, pUsuario) {
         pRuleta.iniciarJuegoRuleta(pUsuario);
@@ -21,8 +28,8 @@ var Casino = /** @class */ (function () {
     Casino.prototype.inciarTragamonedas5 = function (pUsuario) {
         this.tragamonedas5.iniciarJuego(pUsuario);
     };
-    Casino.prototype.mostrarEstadisticasBlackjack = function (pBlackjack) {
-        pBlackjack.generarEstadisticas();
+    Casino.prototype.mostrarEstadisticasBlackjack = function () {
+        this.blackjack.mostrarEstadisticas();
     };
     Casino.prototype.mostrarEstadisticasTragamonedas4 = function () {
         this.tragamonedas4.mostrarEstadisticasTragamonedas4();
