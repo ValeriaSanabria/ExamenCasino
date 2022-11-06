@@ -29,15 +29,21 @@ var Ruleta = /** @class */ (function () {
             }
             else if (this.respuesta == "si") {
                 this.apuesta = main_1.readlineSync.question("Ingrese el monto a apostar: ");
-                pUsuario.restarSaldo(this.apuesta);
-                this.numeroApostado = main_1.readlineSync.question("Ingrese el numero a apostar: ");
-                if (this.numeroApostado > -1 && this.numeroApostado < 37) {
-                    this.listaNumApostados.push(this.numeroApostado);
-                    console.log("Sus numeros apostados son: ", this.listaNumApostados);
+                if (pUsuario.getSaldo() < this.apuesta) {
+                    console.log("Lo siento, fondo insuficiente, su saldo es: ", pUsuario.getSaldo());
+                    break;
                 }
                 else {
-                    console.log("Numero fuera de rango, elija otro");
-                    pUsuario.sumarSaldo(this.apuesta);
+                    pUsuario.restarSaldo(this.apuesta);
+                    this.numeroApostado = main_1.readlineSync.question("Ingrese el numero a apostar: ");
+                    if (this.numeroApostado > -1 && this.numeroApostado < 37) {
+                        this.listaNumApostados.push(this.numeroApostado);
+                        console.log("Sus numeros apostados son: ", this.listaNumApostados);
+                    }
+                    else {
+                        console.log("Numero fuera de rango, elija otro");
+                        pUsuario.sumarSaldo(this.apuesta);
+                    }
                 }
             }
             else if (this.respuesta == "") {
@@ -50,8 +56,9 @@ var Ruleta = /** @class */ (function () {
         this.numeroDeRuleta = Math.floor(Math.random() * (36 - (-1))) + (-1);
         console.log("El numero de la ruleta es: ", this.getNumero());
     };
-    Ruleta.prototype.entregarPremio = function (pApuesta) {
-        return pApuesta * 36;
+    Ruleta.prototype.entregarPremio = function (pUsuario) {
+        this.apuesta += this.apuesta * 36;
+        pUsuario.sumarSaldo(this.apuesta);
     };
     Ruleta.prototype.controlarNumero = function () {
         for (var i = 0; i < this.listaNumApostados.length; i++) {
@@ -80,7 +87,7 @@ var Ruleta = /** @class */ (function () {
                 this.girarRuleta();
                 this.controlarNumero();
                 if (this.numeroApostado == this.numeroDeRuleta) {
-                    console.log("Usted gana: $", this.entregarPremio(this.apuesta));
+                    console.log("Usted gana: $", (this.apuesta * 36));
                     console.log("Su saldo es: $", pUsuario.getSaldo());
                     this.cantPerdidas += this.cantPerdidas + 1;
                     this.cantDineroEntregado += this.apuesta * 36;
