@@ -1,6 +1,0 @@
-
-         Datos recolectados
-Dinero Recaudado: $ 702
-Premio Pagado: $ 4500
-Cantidad de veces jugadas: 26
-Pozo acumulado: $ 150078
