@@ -49,4 +49,10 @@ export class Casino {
     public mostrarEstadisticasTragamonedas5(): void {
         this.tragamonedas5.mostrarEstadisticasTragamonedas5();
     }
+    public resetearEstadisticas(): void {
+        this.ruleta.resetearEstidisticasRuleta();
+        this.blackjack.resetearEstidisticasBlackjack();
+        this.tragamonedas4.resetearEstidisticasCuatroRuedas();
+        this.tragamonedas5.resetearEstidisticasCincoRuedas();
+    }    
 }

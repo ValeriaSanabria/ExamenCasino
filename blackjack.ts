@@ -125,4 +125,7 @@ export class Blackjack {
         fs.writeFileSync('estadisticasBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n" + "Total de premios pagados: $" + this.totalDineroEntregado + "\n");
         console.log(fs.readFileSync('estadisticasBlackjack.txt', 'utf8'));
     }
+    public resetearEstidisticasBlackjack(): void {
+        fs.writeFileSync('estadisticasBlackjack.txt', " ");
+    }
 }

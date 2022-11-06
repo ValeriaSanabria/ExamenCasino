@@ -37,6 +37,9 @@ export class Tragamonedas4 extends Tragamonedas {
     fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
     console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
   }
+  public resetearEstidisticasCuatroRuedas(): void {
+    fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
+}
   public iniciarJuego(pUsuario: Usuario): void {
     console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
     console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));

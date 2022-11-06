@@ -39,3 +39,4 @@ while (i == 0 || i == 1 || i == 2 || i == 3) {
     console.log("Adios vuelva pronto.");
     i = exports.readlineSync.keyInSelect(juegos, "Elija su juego");
 }
+casino1.resetearEstadisticas();
