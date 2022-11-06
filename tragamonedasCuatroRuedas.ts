@@ -3,7 +3,7 @@ import { Usuario } from "./usuario";
 import { readlineSync } from "./main";
 import * as fs from 'fs';
 
-export class Tragamonedas4 extends Tragamonedas { 
+export class TragamonedasCuatroRuedas extends Tragamonedas { 
 
   constructor(pCantRuedas: number) {
     super(pCantRuedas)
@@ -37,7 +37,7 @@ export class Tragamonedas4 extends Tragamonedas {
     fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
     console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
   }
-  public resetearEstidisticasCuatroRuedas(): void {
+  public resetearEstadisticasCuatroRuedas(): void {
     fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
 }
   public iniciarJuego(pUsuario: Usuario): void {

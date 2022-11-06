@@ -49,7 +49,7 @@ export class Blackjack {
         this.carta = Math.floor(Math.random() * (14 - 1)) + 1;
         return this.carta;
     }
-    public iniciarJuegoBlackJack(pUsuario: Usuario): void {        
+    public iniciarJuegoBlackjack(pUsuario: Usuario): void {        
         console.log (this.manual);
         this.respuesta = readlineSync.question("Desea jugar? ");
 
@@ -65,7 +65,7 @@ export class Blackjack {
                 } else {
                     this.resetearJuego();
                     pUsuario.restarSaldo(this.apuesta);
-                    console.log("Bienvenido a BlackJack")
+                    console.log("Bienvenido a BlackJack");
                     console.log("Carta: ", this.carta = this.pedirCartaAleatoria());
                     console.log("Total: ", this.totalSumaUsuario += this.carta);
                     this.respuesta = readlineSync.question("Desea pedir otra carta? ");
@@ -79,7 +79,7 @@ export class Blackjack {
                             if (this.totalSumaUsuario > 21) {
                                 console.log("Superaste los 21, has perdido.");
                                 console.log("Fin del juego");
-                                console.log("Su saldo es: ", pUsuario.getSaldo())
+                                console.log("Su saldo es: ", pUsuario.getSaldo());
                                 this.cantGanadasBancas += 1 * 1;
                                 break;
                             } else if (this.totalSumaUsuario == 21) {
@@ -125,7 +125,7 @@ export class Blackjack {
         fs.writeFileSync('estadisticasBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n" + "Total de premios pagados: $" + this.totalDineroEntregado + "\n");
         console.log(fs.readFileSync('estadisticasBlackjack.txt', 'utf8'));
     }
-    public resetearEstidisticasBlackjack(): void {
+    public resetearEstadisticasBlackjack(): void {
         fs.writeFileSync('estadisticasBlackjack.txt', " ");
     }
 }

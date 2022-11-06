@@ -37,7 +37,7 @@ var Blackjack = /** @class */ (function () {
         this.carta = Math.floor(Math.random() * (14 - 1)) + 1;
         return this.carta;
     };
-    Blackjack.prototype.iniciarJuegoBlackJack = function (pUsuario) {
+    Blackjack.prototype.iniciarJuegoBlackjack = function (pUsuario) {
         console.log(this.manual);
         this.respuesta = main_1.readlineSync.question("Desea jugar? ");
         while (this.respuesta == "si" || this.respuesta == "no") {
@@ -119,7 +119,7 @@ var Blackjack = /** @class */ (function () {
         fs.writeFileSync('estadisticasBlackjack.txt', "\n" + "         Datos recolectados" + "\n" + "Victorias de la Banca: " + this.cantGanadasBancas + "\n" + "Perdidas de la Banca: " + this.cantPerdidasBanca + "\n" + "Empates: " + this.cantEmpate + "\n" + "Total de dinero apostado: $" + this.cantDineroApostado + "\n" + "Total de premios pagados: $" + this.totalDineroEntregado + "\n");
         console.log(fs.readFileSync('estadisticasBlackjack.txt', 'utf8'));
     };
-    Blackjack.prototype.resetearEstidisticasBlackjack = function () {
+    Blackjack.prototype.resetearEstadisticasBlackjack = function () {
         fs.writeFileSync('estadisticasBlackjack.txt', " ");
     };
     return Blackjack;

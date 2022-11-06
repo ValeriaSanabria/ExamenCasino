@@ -15,19 +15,19 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Tragamonedas4 = void 0;
+exports.TragamonedasCuatroRuedas = void 0;
 var abstractTragamonedas_1 = require("./abstractTragamonedas");
 var main_1 = require("./main");
 var fs = require("fs");
-var Tragamonedas4 = /** @class */ (function (_super) {
-    __extends(Tragamonedas4, _super);
-    function Tragamonedas4(pCantRuedas) {
+var TragamonedasCuatroRuedas = /** @class */ (function (_super) {
+    __extends(TragamonedasCuatroRuedas, _super);
+    function TragamonedasCuatroRuedas(pCantRuedas) {
         var _this = _super.call(this, pCantRuedas) || this;
         _this.cantRuedas = pCantRuedas;
         _this.apuesta = 10;
         return _this;
     }
-    Tragamonedas4.prototype.girarRuedas = function (pCantRuedas) {
+    TragamonedasCuatroRuedas.prototype.girarRuedas = function (pCantRuedas) {
         for (var i = 0; i < pCantRuedas; i++) {
             this.listaRuedas[i] = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
         }
@@ -35,29 +35,29 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         this.dineroRecaudado += this.apuesta;
         console.log(this.listaRuedas);
     };
-    Tragamonedas4.prototype.acreditarPremioDosAciertos = function (pUsuario) {
+    TragamonedasCuatroRuedas.prototype.acreditarPremioDosAciertos = function (pUsuario) {
         pUsuario.sumarSaldo(500);
         this.premiosPagados += 500 * 1;
         console.log("Gano $ 500");
     };
-    Tragamonedas4.prototype.acreditarPremioTresAciertos = function (pUsuario) {
+    TragamonedasCuatroRuedas.prototype.acreditarPremioTresAciertos = function (pUsuario) {
         pUsuario.sumarSaldo(1000);
         this.premiosPagados += 1000 * 1;
         console.log("Gano $ 1000");
     };
-    Tragamonedas4.prototype.acreditarPremioCuatroAciertos = function (pUsuario) {
+    TragamonedasCuatroRuedas.prototype.acreditarPremioCuatroAciertos = function (pUsuario) {
         pUsuario.sumarSaldo(2000);
         this.premiosPagados += 2000 * 1;
         console.log("Gano $ 2000");
     };
-    Tragamonedas4.prototype.mostrarEstadisticasTragamonedas4 = function () {
+    TragamonedasCuatroRuedas.prototype.mostrarEstadisticasTragamonedas4 = function () {
         fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
         console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
     };
-    Tragamonedas4.prototype.resetearEstidisticasCuatroRuedas = function () {
+    TragamonedasCuatroRuedas.prototype.resetearEstidisticasCuatroRuedas = function () {
         fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
     };
-    Tragamonedas4.prototype.iniciarJuego = function (pUsuario) {
+    TragamonedasCuatroRuedas.prototype.iniciarJuego = function (pUsuario) {
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
         console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
         this.inicio = main_1.readlineSync.question("Desea Jugar ?...");
@@ -98,6 +98,6 @@ var Tragamonedas4 = /** @class */ (function (_super) {
             this.inicio = main_1.readlineSync.question("Desea Jugar ?...");
         }
     };
-    return Tragamonedas4;
+    return TragamonedasCuatroRuedas;
 }(abstractTragamonedas_1.Tragamonedas));
-exports.Tragamonedas4 = Tragamonedas4;
+exports.TragamonedasCuatroRuedas = TragamonedasCuatroRuedas;

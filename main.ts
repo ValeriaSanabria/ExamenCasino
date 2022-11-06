@@ -1,13 +1,13 @@
-import {Blackjack} from "./blackjack";
-import {Usuario} from "./usuario";
-import {Casino} from "./casino"
-import {Tragamonedas4} from "./tragamonedasCuatroRuedas";
-import {Tragamonedas5} from "./tragamonedasCincoRuedas";
-import {Ruleta} from "./ruleta";
+import { Blackjack } from "./blackjack";
+import { Usuario } from "./usuario";
+import { Casino } from "./casino"
+import { TragamonedasCuatroRuedas } from "./tragamonedasCuatroRuedas";
+import { TragamonedasCincoRuedas } from "./tragamonedasCincoRuedas";
+import { Ruleta } from "./ruleta";
 
 export let readlineSync = require('readline-sync');
-let tragamonedas4: Tragamonedas4 = new Tragamonedas4(4);
-let tragamonedas5: Tragamonedas5 = new Tragamonedas5(5);
+let tragamonedas4: TragamonedasCuatroRuedas = new TragamonedasCuatroRuedas(4);
+let tragamonedas5: TragamonedasCincoRuedas = new TragamonedasCincoRuedas(5);
 let usuario1: Usuario = new Usuario(123, "Jugador", 20000);
 let blackjack1: Blackjack = new Blackjack();
 let ruleta1: Ruleta = new Ruleta();
