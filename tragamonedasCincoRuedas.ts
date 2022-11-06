@@ -55,6 +55,9 @@ export class Tragamonedas5 extends Tragamonedas {
         fs.writeFileSync('estadisticasTragamonedas5.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n" + "Pozo acumulado: $ " + this.pozo);
         console.log(fs.readFileSync('estadisticasTragamonedas5.txt', 'utf8'));
       }
+      public resetearEstidisticasCincoRuedas(): void {
+        fs.writeFileSync('estadisticasTragamonedas5.txt', " ");
+    }
     public iniciarJuego(pUsuario: Usuario): void {
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
         console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));

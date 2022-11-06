@@ -54,6 +54,9 @@ var Tragamonedas4 = /** @class */ (function (_super) {
         fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
         console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
     };
+    Tragamonedas4.prototype.resetearEstidisticasCuatroRuedas = function () {
+        fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
+    };
     Tragamonedas4.prototype.iniciarJuego = function (pUsuario) {
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
         console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));

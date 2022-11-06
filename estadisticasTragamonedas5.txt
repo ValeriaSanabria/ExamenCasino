@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
          Datos recolectados
 Dinero Recaudado: $ 864
 Premio Pagado: $ 6000
 Cantidad de veces jugadas: 32
 Pozo acumulado: $ 150096
+=======
+ 
+>>>>>>> origin
