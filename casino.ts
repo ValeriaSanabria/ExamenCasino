@@ -28,8 +28,8 @@ export class Casino {
     public iniciarBlackjack (pUsuario: Usuario): void {
         this.blackjack.iniciarJuegoBlackJack(pUsuario);
     }
-    public iniciarRuleta(pRuleta: Ruleta, pUsuario: Usuario): void {
-        pRuleta.iniciarJuegoRuleta(pUsuario);
+    public iniciarRuleta(pUsuario: Usuario): void {
+        this.ruleta.iniciarJuegoRuleta(pUsuario);
     }
     public inciarTragamonedas4(pUsuario: Usuario): void {
         this.tragamonedas4.iniciarJuego(pUsuario);
@@ -40,10 +40,13 @@ export class Casino {
     public mostrarEstadisticasBlackjack(): void {
         this.blackjack.mostrarEstadisticas();
     }
-    public mostrarEstadisticasTragamonedas4() {
+    public mostrarEstadistcasRuleta(): void {
+        this.ruleta.mostrarEstadisticas();
+    }
+    public mostrarEstadisticasTragamonedas4(): void {
         this.tragamonedas4.mostrarEstadisticasTragamonedas4();
     }
-    public mostrarEstadisticasTragamonedas5() {
+    public mostrarEstadisticasTragamonedas5(): void {
         this.tragamonedas5.mostrarEstadisticasTragamonedas5();
     }
 }

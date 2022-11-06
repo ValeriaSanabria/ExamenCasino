@@ -1,0 +1,7 @@
+
+         Datos recolectados
+Cantidad de partidas jugadas: 0
+Total de cantidades de veces ganadas de la casa:1
+Cantidad de veces perdidas: 0
+Total de premios entregados: $0
+Total de dinero recaudado: $20

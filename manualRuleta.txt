@@ -1,4 +1,5 @@
 
+La ruleta está compuesto por 37 números (del 0 al 36)
 En cada partida el crupier lanza una bola sobre la ruleta en movimiento, después de que la bola gire varias vueltas
 caerá sobre una de las casillas de la ruleta.
 El objetivo del juego es predecir en que casilla caerá la bola.

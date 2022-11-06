@@ -1,7 +1,0 @@
-
-         Datos recolectados
-Victorias de la Banca: 2
-Perdidas de la Banca: 0
-Empates: 0
-Total de dinero apostado: $40
-Total de premios pagados: $0
