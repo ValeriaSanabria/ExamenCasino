@@ -68,15 +68,15 @@ var TragamonedasCincoRuedas = /** @class */ (function (_super) {
         console.log("Gano el pozo de: $ ", this.pozo);
     };
     TragamonedasCincoRuedas.prototype.mostrarEstadisticasTragamonedas5 = function () {
-        fs.writeFileSync('estadisticasTragamonedas5.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n" + "Pozo acumulado: $ " + this.pozo);
-        console.log(fs.readFileSync('estadisticasTragamonedas5.txt', 'utf8'));
+        fs.writeFileSync('asset/estadisticasTragamonedas5.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n" + "Pozo acumulado: $ " + this.pozo);
+        console.log(fs.readFileSync('asset/estadisticasTragamonedas5.txt', 'utf8'));
     };
     TragamonedasCincoRuedas.prototype.resetearEstadisticasCincoRuedas = function () {
-        fs.writeFileSync('estadisticasTragamonedas5.txt', " ");
+        fs.writeFileSync('asset/estadisticasTragamonedas5.txt', " ");
     };
     TragamonedasCincoRuedas.prototype.iniciarJuego = function (pUsuario) {
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
-        console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
+        console.log(fs.readFileSync('asset/manualTragamonedasSimple.txt', 'utf8'));
         this.inicio = main_1.readlineSync.question("Desea Jugar ?...");
         while (this.inicio == "si" || this.inicio == "no") {
             if (this.inicio == "no") {

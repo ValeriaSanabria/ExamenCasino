@@ -20,7 +20,7 @@ export class Blackjack {
         this.totalSumaUsuario = 0;
         this.totalSumaBanca = 0;
         this.carta = 0;
-        this.manual = fs.readFileSync('manualBlackjack.txt', 'utf8');
+        this.manual = fs.readFileSync('asset/manualBlackjack.txt', 'utf8');
         this.cantDineroApostado = 0;
         this.cantEmpate = 0;
         this.cantGanadasBancas = 0;

@@ -27,7 +27,9 @@ export abstract class Tragamonedas {
         console.log(this.listaRuedas);
       }
 
+
     public iniciarJuego(pUsuario: Usuario): void {
-  
+
     }
-}
+}  
+ 
