@@ -80,7 +80,7 @@ public mostrarEstadisticas(): void {
     fs.writeFileSync('estadisticasRuleta.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de partidas jugadas: " + this.cantPartidas + "\n" + "Total de cantidades de veces ganadas de la casa:" + this.cantGanadas + "\n" + "Cantidad de veces perdidas: " + this.cantPerdidas + "\n" + "Total de premios entregados: $" + this.cantDineroEntregado + "\n" + "Total de dinero recaudado: $" + this.cantDineroRecaudado + "\n");
     console.log(fs.readFileSync('estadisticasRuleta.txt', 'utf8'));
 }
-public resetearEstidisticasRuleta(): void {
+public resetearEstadisticasRuleta(): void {
     fs.writeFileSync('estadisticasRuleta.txt', " ");
 }
 

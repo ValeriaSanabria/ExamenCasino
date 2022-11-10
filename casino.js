@@ -41,9 +41,9 @@ var Casino = /** @class */ (function () {
         this.tragamonedas5.mostrarEstadisticasTragamonedas5();
     };
     Casino.prototype.resetearEstadisticas = function () {
-        this.ruleta.resetearEstidisticasRuleta();
+        this.ruleta.resetearEstadisticasRuleta();
         this.blackjack.resetearEstadisticasBlackjack();
-        this.tragamonedas4.resetearEstidisticasCuatroRuedas();
+        this.tragamonedas4.resetearEstadisticasCuatroRuedas();
         this.tragamonedas5.resetearEstadisticasCincoRuedas();
     };
     return Casino;
