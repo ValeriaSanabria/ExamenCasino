@@ -20,7 +20,7 @@ export class Ruleta {
         this.numeroDeRuleta = 0;
         this.apuesta = 0;
         this.numeroApostado = 0;
-        this.manual = fs.readFileSync('manualRuleta.txt', 'utf8');
+        this.manual = fs.readFileSync('asset/manualRuleta.txt', 'utf8');
         this.respuesta = "";
         this.cantPartidas = 0;
         this.cantGanadas = 0;
@@ -77,11 +77,11 @@ public controlarNumero(): void {
     }
 }
 public mostrarEstadisticas(): void {
-    fs.writeFileSync('estadisticasRuleta.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de partidas jugadas: " + this.cantPartidas + "\n" + "Total de cantidades de veces ganadas de la casa:" + this.cantGanadas + "\n" + "Cantidad de veces perdidas: " + this.cantPerdidas + "\n" + "Total de premios entregados: $" + this.cantDineroEntregado + "\n" + "Total de dinero recaudado: $" + this.cantDineroRecaudado + "\n");
-    console.log(fs.readFileSync('estadisticasRuleta.txt', 'utf8'));
+    fs.writeFileSync('asset/estadisticasRuleta.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de partidas jugadas: " + this.cantPartidas + "\n" + "Total de cantidades de veces ganadas de la casa: " + this.cantGanadas + "\n" + "Cantidad de veces perdidas: " + this.cantPerdidas + "\n" + "Total de premios entregados: $" + this.cantDineroEntregado + "\n" + "Total de dinero recaudado: $" + this.cantDineroRecaudado + "\n");
+    console.log(fs.readFileSync('asset/estadisticasRuleta.txt', 'utf8'));
 }
-public resetearEstidisticasRuleta(): void {
-    fs.writeFileSync('estadisticasRuleta.txt', " ");
+public resetearEstadisticasRuleta(): void {
+    fs.writeFileSync('asset/estadisticasRuleta.txt', " ");
 }
 
 public iniciarJuegoRuleta(pUsuario: Usuario): void {

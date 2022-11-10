@@ -51,15 +51,15 @@ var TragamonedasCuatroRuedas = /** @class */ (function (_super) {
         console.log("Gano $ 2000");
     };
     TragamonedasCuatroRuedas.prototype.mostrarEstadisticasTragamonedas4 = function () {
-        fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
-        console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
+        fs.writeFileSync('asset/estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
+        console.log(fs.readFileSync('asset/estadisticasTragamonedas4.txt', 'utf8'));
     };
-    TragamonedasCuatroRuedas.prototype.resetearEstidisticasCuatroRuedas = function () {
-        fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
+    TragamonedasCuatroRuedas.prototype.resetearEstadisticasCuatroRuedas = function () {
+        fs.writeFileSync('asset/estadisticasTragamonedas4.txt', " ");
     };
     TragamonedasCuatroRuedas.prototype.iniciarJuego = function (pUsuario) {
         console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
-        console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
+        console.log(fs.readFileSync('asset/manualTragamonedasSimple.txt', 'utf8'));
         this.inicio = main_1.readlineSync.question("Desea Jugar ?...");
         while (this.inicio == "si" || this.inicio == "no") {
             if (this.inicio == "no") {

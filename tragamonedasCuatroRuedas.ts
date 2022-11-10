@@ -34,15 +34,15 @@ export class TragamonedasCuatroRuedas extends Tragamonedas {
     console.log("Gano $ 2000");
   }
   public mostrarEstadisticasTragamonedas4(): void {
-    fs.writeFileSync('estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
-    console.log(fs.readFileSync('estadisticasTragamonedas4.txt', 'utf8'));
+    fs.writeFileSync('asset/estadisticasTragamonedas4.txt', "\n" + "         Datos recolectados" + "\n" + "Dinero Recaudado: $ " + this.dineroRecaudado + "\n" + "Premio Pagado: $ " + this.premiosPagados + "\n" + "Cantidad de veces jugadas: " + this.cantJugadas + "\n");
+    console.log(fs.readFileSync('asset/estadisticasTragamonedas4.txt', 'utf8'));
   }
   public resetearEstadisticasCuatroRuedas(): void {
-    fs.writeFileSync('estadisticasTragamonedas4.txt', " ");
+    fs.writeFileSync('asset/estadisticasTragamonedas4.txt', " ");
 }
   public iniciarJuego(pUsuario: Usuario): void {
     console.log("Bienvenido al Tragamonedas de cuatro ruedas...");
-    console.log(fs.readFileSync('manualTragamonedasSimple.txt', 'utf8'));
+    console.log(fs.readFileSync('asset/manualTragamonedasSimple.txt', 'utf8'));
     this.inicio = readlineSync.question("Desea Jugar ?...");
     while (this.inicio == "si" || this.inicio == "no") {
       if (this.inicio == "no") {
