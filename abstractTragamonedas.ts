@@ -26,10 +26,8 @@ export abstract class Tragamonedas {
         this.dineroRecaudado += this.apuesta;
         console.log(this.listaRuedas);
       }
-<<<<<<< HEAD
-     public iniciarJuego(pUsuario: Usuario): void {
-=======
+
     public iniciarJuego(pUsuario: Usuario): void {
->>>>>>> origin
+  
     }
 }

@@ -72,7 +72,7 @@ var Ruleta = /** @class */ (function () {
         fs.writeFileSync('estadisticasRuleta.txt', "\n" + "         Datos recolectados" + "\n" + "Cantidad de partidas jugadas: " + this.cantPartidas + "\n" + "Total de cantidades de veces ganadas de la casa:" + this.cantGanadas + "\n" + "Cantidad de veces perdidas: " + this.cantPerdidas + "\n" + "Total de premios entregados: $" + this.cantDineroEntregado + "\n" + "Total de dinero recaudado: $" + this.cantDineroRecaudado + "\n");
         console.log(fs.readFileSync('estadisticasRuleta.txt', 'utf8'));
     };
-    Ruleta.prototype.resetearEstidisticasRuleta = function () {
+    Ruleta.prototype.resetearEstadisticasRuleta = function () {
         fs.writeFileSync('estadisticasRuleta.txt', " ");
     };
     Ruleta.prototype.iniciarJuegoRuleta = function (pUsuario) {
